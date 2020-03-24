@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".single_facility_details.SingleFacilityActivity">
+    tools:context=".ui.single_service_details.SingleServiceActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -81,12 +81,35 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/tv_min_class_name"
+                            android:id="@+id/tv_code_name"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="축구장"
                             android:textSize="14sp"
                             android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="주소: "
+                            android:textSize="12sp"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:id="@+id/tv_address"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="서울 구로구 신도림로 2020"
+                            android:textSize="12sp"/>
 
                     </LinearLayout>
 
@@ -114,7 +137,7 @@
                             android:textStyle="bold"/>
 
                         <TextView
-                            android:id="@+id/tv_service_state"
+                            android:id="@+id/tv_service_status"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
@@ -132,16 +155,16 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
-                            android:text="서비스 대상: "
+                            android:text="유료 여부: "
                             android:textSize="12sp"
                             android:textStyle="bold"/>
 
                         <TextView
-                            android:id="@+id/tv_service_target"
+                            android:id="@+id/tv_pay_at"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
-                            android:text="제한없음"
+                            android:text="유료"
                             android:textSize="12sp"/>
 
                     </LinearLayout>
@@ -177,12 +200,12 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
-                            android:text="접수 가능 기간: "
+                            android:text="접수 종료 기간: "
                             android:textSize="12sp"
                             android:textStyle="bold"/>
 
                         <TextView
-                            android:id="@+id/tv_budget"
+                            android:id="@+id/tv_reception_end_date"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
@@ -190,6 +213,22 @@
                             android:textSize="12sp"/>
 
                     </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="공지"
+                        android:textSize="12sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/tv_notice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="아아아아, 공지입니다! 아아."
+                        android:textSize="12sp"/>
 
                     <TextView
                         android:layout_width="wrap_content"
