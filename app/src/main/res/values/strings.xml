@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ReservationLive</string>
+    <string name="app_name">서울 운동하자</string>
     <string name="network_error_msg">네트워크 에러!!</string>
 
 </resources>

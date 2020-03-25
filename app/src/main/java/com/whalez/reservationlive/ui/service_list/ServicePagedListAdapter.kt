@@ -80,6 +80,7 @@ class ServicePagedListAdapter(private val context: Context) :
             Glide.with(itemView.context)
                 .load(serviceImgUrl)
                 .placeholder(R.drawable.image_placeholder)
+                .override(200, 200)
                 .into(itemView.cv_iv_service_image)
             itemView.apply {
                 cv_tv_service_name.text = service.serviceName

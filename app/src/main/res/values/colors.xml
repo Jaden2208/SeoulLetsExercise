@@ -6,6 +6,6 @@
     <color name="colorBackground">#e4e7ec</color>
 
     <color name="reservationPaused">#FF7725</color>
-    <color name="reservationFinished">#D51717</color>
+    <color name="reservationFinished">#FF0000</color>
     <color name="reservationAvailable">#00780F</color>
 </resources>
