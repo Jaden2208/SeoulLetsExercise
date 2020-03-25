@@ -1,11 +1,14 @@
 package com.whalez.reservationlive.ui.single_service_details
 
 import android.annotation.SuppressLint
+import android.content.Intent
+import android.net.Uri
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Html
 import android.view.View
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -28,6 +31,7 @@ class SingleServiceActivity : AppCompatActivity() {
         setContentView(R.layout.activity_single_service)
 
         val serviceId = intent.getStringExtra("id")
+        val serviceUrl = intent.getStringExtra("serviceUrl")
 
         val apiService: ServiceDBInterface = ServiceDBClient.getClient()
         serviceDetailsRepository = ServiceDetailsRepository(apiService)
@@ -35,7 +39,7 @@ class SingleServiceActivity : AppCompatActivity() {
         viewModel = getViewModel(serviceId!!)
 
         viewModel.serviceDetails.observe(this, Observer {
-            bindUI(it)
+            bindUI(it, serviceUrl)
         })
 
         viewModel.networkState.observe(this, Observer {
@@ -46,14 +50,27 @@ class SingleServiceActivity : AppCompatActivity() {
     }
 
     @SuppressLint("SetTextI18n")
-    fun bindUI(it: ServiceDetails) {
-        val detail = it.detailList.detailMovieList[0]
+    fun bindUI(it: ServiceDetails, serviceUrl: String?) {
+        // null 이 뜨는 경우가 분명히 있음 지우면 안됨.
+        if(it.detailList == null) {
+            main_layout.visibility = View.GONE
+            no_data_layout.visibility = View.VISIBLE
+            btn_temp_goto_website.setOnClickListener {
+                if(serviceUrl == null){
+                    Toast.makeText(this, "사이트 링크가 존재하지 않습니다.", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
+                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(serviceUrl))
+                startActivity(intent)
+            }
+            return
+        }
 
+        val detail = it.detailList.detailMovieList[0]
         val serviceImageURL = detail.imgPath
         Glide.with(this)
             .load(serviceImageURL)
             .into(iv_service_image)
-
         tv_service_name.text = detail.serviceName
         tv_area_name.text = detail.areaName
         tv_place_name.text = detail.placeName

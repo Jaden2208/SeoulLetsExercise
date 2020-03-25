@@ -74,6 +74,7 @@ class MainActivity : AppCompatActivity() {
     private fun getViewModel(): MainActivityViewModel {
         return ViewModelProvider(this, object : ViewModelProvider.Factory {
             override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+                @Suppress("UNCHECKED_CAST")
                 return MainActivityViewModel(servicePagedListRepository) as T
             }
         })[MainActivityViewModel::class.java]

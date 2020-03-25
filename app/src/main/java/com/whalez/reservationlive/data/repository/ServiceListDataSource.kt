@@ -33,7 +33,7 @@ class ServiceListDataSource(
                 .subscribeOn(Schedulers.io())
                 .subscribe(
                     {
-                        callback.onResult(it.listPublicReservationSport.serviceList, null, itemIndexBegin + POST_ITEM_COUNTS)
+                        callback.onResult(it.listPublicReservationSport.serviceList, null, itemIndexEnd+1)
                         networkState.postValue(NetworkState.LOADED)
                     },
                     {
@@ -54,14 +54,16 @@ class ServiceListDataSource(
                 .subscribeOn(Schedulers.io())
                 .subscribe(
                     {
-                        if(it == null){
-                            Log.d("KKK", "null 이지롱")
-                        }
 //                        Log.d("KKK listTotalCount", it.listPublicReservationSport.listTotalCount.toString())
 //                        Log.d("KKK params.key", params.key.toString())
 
-                        if(it.listPublicReservationSport.listTotalCount >= params.key){
-                            Log.d("KKK", "여기?")
+                        Log.d("KKK1", it.toString())
+//                        Log.d("KKK2", it.listPublicReservationSport.toString())
+//                        Log.d("KKK3", it.listPublicReservationSport.listTotalCount.toString())
+//                        Log.d("KKK4", it.listPublicReservationSport.serviceList.toString())
+
+                        if(it.listPublicReservationSport != null && it.listPublicReservationSport.listTotalCount >= params.key){
+
                             callback.onResult(it.listPublicReservationSport.serviceList, params.key + 1)
                             networkState.postValue(NetworkState.LOADED)
                         } else {

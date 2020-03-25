@@ -37,9 +37,9 @@ data class Service(
 //    @SerializedName("SVCOPNENDDT")
 //    val sVCOPNENDDT: String,
     @SerializedName("SVCSTATNM")
-    val serviceStatus: String
-//    @SerializedName("SVCURL")
-//    val sVCURL: String,
+    val serviceStatus: String,
+    @SerializedName("SVCURL")
+    val serviceUrl: String
 //    @SerializedName("TELNO")
 //    val tELNO: String,
 //    @SerializedName("USETGTINFO")
