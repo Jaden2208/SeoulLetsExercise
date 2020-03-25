@@ -8,13 +8,14 @@ import io.reactivex.disposables.CompositeDisposable
 
 class ServiceListDataSourceFactory(
     private val apiService: ServiceDBInterface,
-    private val compositeDisposable: CompositeDisposable
+    private val compositeDisposable: CompositeDisposable,
+    private val codeName: String
 ) : DataSource.Factory<Int, Service>() {
 
     val servicesLiveDataSource = MutableLiveData<ServiceListDataSource>()
 
     override fun create(): DataSource<Int, Service> {
-        val serviceListDataSource = ServiceListDataSource(apiService, compositeDisposable)
+        val serviceListDataSource = ServiceListDataSource(apiService, compositeDisposable, codeName)
         servicesLiveDataSource.postValue(serviceListDataSource)
         return serviceListDataSource
     }

@@ -17,8 +17,12 @@ class ServicePagedListRepository(private val apiService: ServiceDBInterface) {
     private lateinit var servicePagedList: LiveData<PagedList<Service>>
     private lateinit var serviceListDataSourceFactory: ServiceListDataSourceFactory
 
-    fun fetchLiveServicePagedList(compositeDisposable: CompositeDisposable): LiveData<PagedList<Service>> {
-        serviceListDataSourceFactory = ServiceListDataSourceFactory(apiService, compositeDisposable)
+    fun fetchLiveServicePagedList(
+        compositeDisposable: CompositeDisposable,
+        codeName: String
+    ): LiveData<PagedList<Service>> {
+        serviceListDataSourceFactory =
+            ServiceListDataSourceFactory(apiService, compositeDisposable, codeName)
 
         val config = PagedList.Config.Builder()
             .setEnablePlaceholders(false)

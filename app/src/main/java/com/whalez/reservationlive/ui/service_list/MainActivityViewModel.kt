@@ -7,13 +7,15 @@ import com.whalez.reservationlive.data.repository.NetworkState
 import com.whalez.reservationlive.data.vo.service_list.Service
 import io.reactivex.disposables.CompositeDisposable
 
-class MainActivityViewModel(private val servicePagedListRepository: ServicePagedListRepository) :
-    ViewModel() {
+class MainActivityViewModel(
+    private val servicePagedListRepository: ServicePagedListRepository,
+    codeName: String
+) : ViewModel() {
 
     private val compositeDisposable = CompositeDisposable()
 
     val servicePagedList: LiveData<PagedList<Service>> by lazy {
-        servicePagedListRepository.fetchLiveServicePagedList(compositeDisposable)
+        servicePagedListRepository.fetchLiveServicePagedList(compositeDisposable, codeName)
     }
 
     val networkState: LiveData<NetworkState> by lazy {

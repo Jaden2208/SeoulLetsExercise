@@ -12,13 +12,12 @@ import io.reactivex.schedulers.Schedulers
 
 class ServiceListDataSource(
     private val apiService: ServiceDBInterface,
-    private val compositeDisposable: CompositeDisposable
+    private val compositeDisposable: CompositeDisposable,
+    private val codeName: String
 ) : PageKeyedDataSource<Int, Service>() {
 
     private var itemIndexBegin = FIRST_ITEM_INDEX
     private var itemIndexEnd = POST_ITEM_COUNTS
-//    private var countTo = POST_ITEM_COUNTS
-    private var codeName = "축구장"
 
     val networkState: MutableLiveData<NetworkState> = MutableLiveData()
 
@@ -54,14 +53,7 @@ class ServiceListDataSource(
                 .subscribeOn(Schedulers.io())
                 .subscribe(
                     {
-//                        Log.d("KKK listTotalCount", it.listPublicReservationSport.listTotalCount.toString())
-//                        Log.d("KKK params.key", params.key.toString())
-
-                        Log.d("KKK1", it.toString())
-//                        Log.d("KKK2", it.listPublicReservationSport.toString())
-//                        Log.d("KKK3", it.listPublicReservationSport.listTotalCount.toString())
-//                        Log.d("KKK4", it.listPublicReservationSport.serviceList.toString())
-
+                        // 아래 조건문 warning 무시할 것, 저거 없으면 오류!
                         if(it.listPublicReservationSport != null && it.listPublicReservationSport.listTotalCount >= params.key){
 
                             callback.onResult(it.listPublicReservationSport.serviceList, params.key + 1)
