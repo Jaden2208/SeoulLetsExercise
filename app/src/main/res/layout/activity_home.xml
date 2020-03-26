@@ -90,7 +90,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:drawableStart="@drawable/ic_football_black"
+                        android:drawableStart="@drawable/ic_futsal_black"
                         android:text=" 풋살장"
                         android:textColor="@color/colorPrimaryDark"
                         android:textSize="20sp"
@@ -123,7 +123,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:drawableStart="@drawable/ic_football_black"
+                        android:drawableStart="@drawable/ic_baseball_black"
                         android:text=" 야구장"
                         android:textColor="@color/colorPrimaryDark"
                         android:textSize="20sp"
@@ -149,7 +149,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:drawableStart="@drawable/ic_football_black"
+                        android:drawableStart="@drawable/ic_basketball_black"
                         android:text=" 농구장"
                         android:textColor="@color/colorPrimaryDark"
                         android:textSize="20sp"
@@ -182,7 +182,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:drawableStart="@drawable/ic_football_black"
+                        android:drawableStart="@drawable/ic_tennis_black"
                         android:text=" 테니스장"
                         android:textColor="@color/colorPrimaryDark"
                         android:textSize="20sp"
@@ -208,7 +208,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:drawableStart="@drawable/ic_football_black"
+                        android:drawableStart="@drawable/ic_badminton_black"
                         android:text=" 배드민턴장"
                         android:textColor="@color/colorPrimaryDark"
                         android:textSize="20sp"
@@ -241,7 +241,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:drawableStart="@drawable/ic_football_black"
+                        android:drawableStart="@drawable/ic_volleyball_black"
                         android:text=" 배구장"
                         android:textColor="@color/colorPrimaryDark"
                         android:textSize="20sp"
@@ -267,7 +267,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:drawableStart="@drawable/ic_football_black"
+                        android:drawableStart="@drawable/ic_multipurpose_black"
                         android:text=" 다목적경기장"
                         android:textColor="@color/colorPrimaryDark"
                         android:textSize="20sp"
@@ -277,64 +277,29 @@
 
             </LinearLayout>
 
-            <LinearLayout
+            <androidx.cardview.widget.CardView
+                android:id="@+id/allcodes"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_height="70dp"
+                android:layout_marginHorizontal="6dp"
+                android:layout_marginTop="6dp"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?selectableItemBackground"
+                app:cardCornerRadius="5dp"
+                android:onClick="onClickCode">
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/etc"
-                    android:layout_width="0dp"
-                    android:layout_height="70dp"
-                    android:layout_marginStart="6dp"
-                    android:layout_marginTop="6dp"
-                    android:layout_marginEnd="3dp"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:foreground="?selectableItemBackground"
-                    app:cardCornerRadius="5dp"
-                    android:onClick="onClickCode">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="전체"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:drawableStart="@drawable/ic_football_black"
-                        android:text=" 기타"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/allcodes"
-                    android:layout_width="0dp"
-                    android:layout_height="70dp"
-                    android:layout_marginStart="3dp"
-                    android:layout_marginTop="6dp"
-                    android:layout_marginEnd="6dp"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:foreground="?selectableItemBackground"
-                    app:cardCornerRadius="5dp"
-                    android:onClick="onClickCode">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:drawableStart="@drawable/ic_football_black"
-                        android:text=" 전체"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-
-                </androidx.cardview.widget.CardView>
-
-            </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
 
         </LinearLayout>

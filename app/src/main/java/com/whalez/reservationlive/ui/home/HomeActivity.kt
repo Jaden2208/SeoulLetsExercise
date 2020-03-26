@@ -26,7 +26,6 @@ class HomeActivity : AppCompatActivity() {
             R.id.badminton -> "배드민턴장"
             R.id.volleyball -> "배구장"
             R.id.multipurpose -> "다목적경기장"
-            R.id.etc -> "기타"
             R.id.allcodes -> "전체"
             else -> return
         }
