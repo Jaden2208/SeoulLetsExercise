@@ -7,7 +7,7 @@
 
     <color name="reservationPaused">#FF7725</color>
     <color name="reservationFinished">#FF0000</color>
-    <color name="reservationAvailable">#00780F</color>
+    <color name="reservationAvailable">#00C100</color>
 
     <color name="colorSeoul">#AE1932</color>
     <color name="pantone2020">#0f4c81</color>

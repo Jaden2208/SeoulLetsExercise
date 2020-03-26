@@ -56,7 +56,6 @@
                             android:layout_margin="10dp"
                             android:gravity="center"
                             android:text=" 축구장"
-                            android:drawableStart="@drawable/ic_football_white"
                             android:textColor="@color/colorBackground"
                             android:textSize="20sp"
                             android:textStyle="bold" />

@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/card_view"
-    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:foreground="?selectableItemBackground"
     android:layout_marginHorizontal="4dp"
     android:layout_marginTop="4dp"
     android:layout_marginBottom="8dp"
+    android:clickable="true"
     android:focusable="true"
-    android:clickable="true">
+    android:foreground="?selectableItemBackground">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,27 +18,29 @@
         <ImageView
             android:id="@+id/cv_iv_service_image"
             android:layout_width="match_parent"
-            android:layout_height="170dp"
-            android:scaleType="centerCrop"
+            android:layout_height="250dp"
             android:layout_gravity="center"
-            android:src="@drawable/image_placeholder"
-            android:adjustViewBounds="true"/>
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/image_placeholder" />
 
         <TextView
             android:id="@+id/cv_tv_service_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
             android:layout_marginStart="4dp"
-            android:text="신도림고등학교"
-            android:textSize="12sp"
+            android:layout_marginTop="2dp"
+            android:ellipsize="end"
             android:maxLines="1"
+            android:text="신도림고등학교"
             android:textColor="@android:color/black"
-            android:ellipsize="end"/>
+            android:textSize="15sp"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
             android:orientation="horizontal">
 
             <TextView
@@ -48,8 +49,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:layout_marginBottom="4dp"
-                android:text="구로구 > "
-                android:textSize="12sp"/>
+                android:text="구로구"
+                android:textSize="13sp" />
 
             <TextView
                 android:id="@+id/cv_tv_place_name"
@@ -57,8 +58,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:layout_marginBottom="4dp"
+                android:maxLines="1"
                 android:text="난지축구장"
-                android:textSize="12sp"/>
+                android:textSize="13sp" />
 
 
         </LinearLayout>
@@ -70,7 +72,7 @@
             android:layout_marginStart="4dp"
             android:layout_marginBottom="4dp"
             android:text="예약 중지"
-            android:textSize="13sp"/>
+            android:textSize="13sp" />
 
     </LinearLayout>
 

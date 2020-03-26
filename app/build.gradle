@@ -51,10 +51,11 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.6'
 
     // Glide
-    implementation 'com.github.bumptech.glide:glide:4.10.0'
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    implementation "com.github.bumptech.glide:okhttp3-integration:4.11.0"
 
     // Paging
-    implementation 'androidx.paging:paging-runtime:2.1.1'
+    implementation 'androidx.paging:paging-runtime:2.1.2'
 
     // RxJava2
     implementation 'io.reactivex.rxjava2:rxjava:2.2.7'

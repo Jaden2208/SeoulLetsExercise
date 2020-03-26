@@ -55,11 +55,9 @@ class ServiceListDataSource(
                     {
                         // 아래 조건문 warning 무시할 것, 저거 없으면 오류!
                         if(it.listPublicReservationSport != null && it.listPublicReservationSport.listTotalCount >= params.key){
-
                             callback.onResult(it.listPublicReservationSport.serviceList, params.key + 1)
                             networkState.postValue(NetworkState.LOADED)
                         } else {
-                            Log.d("KKK", "잘 들어오니?")
                             networkState.postValue(NetworkState.ENDOFLIST)
                         }
                     },
