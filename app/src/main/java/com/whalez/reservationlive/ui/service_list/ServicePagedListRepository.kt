@@ -1,6 +1,7 @@
 package com.whalez.reservationlive.ui.service_list
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
@@ -30,7 +31,6 @@ class ServicePagedListRepository(private val apiService: ServiceDBInterface) {
             .build()
 
         servicePagedList = LivePagedListBuilder(serviceListDataSourceFactory, config).build()
-
         return servicePagedList
     }
 

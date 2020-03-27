@@ -6,6 +6,8 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Filter
+import android.widget.Filterable
 import androidx.core.content.ContextCompat
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
@@ -21,12 +23,15 @@ import com.whalez.reservationlive.ui.single_service_details.SingleServiceActivit
 import kotlinx.android.synthetic.main.network_state_item.view.*
 import kotlinx.android.synthetic.main.service_list_item.view.*
 import java.util.*
+import kotlin.collections.ArrayList
 
 class ServicePagedListAdapter(private val context: Context) :
     PagedListAdapter<Service, RecyclerView.ViewHolder>(ServiceDiffCallback()) {
 
     val SERVICE_VIEW_TYPE = 1
     val NETWORK_VIEW_TYPE = 2
+
+//    var areaName = ""
 
     private var networkState: NetworkState? = null
 
@@ -70,16 +75,16 @@ class ServicePagedListAdapter(private val context: Context) :
 
     }
 
-    class ServiceItemViewHolder (view: View) : RecyclerView.ViewHolder(view) {
+    inner class ServiceItemViewHolder (view: View) : RecyclerView.ViewHolder(view) {
 
-        companion object{
-            const val CLICK_TIME_INTERVAL = 500
-        }
+        private val CLICK_TIME_INTERVAL = 500
+
         private var mLastClickTime = System.currentTimeMillis()
-
 
         fun bind(service: Service?, context: Context) {
             if (service == null) return
+//            if(!service.areaName.contains(areaName)) return
+            Log.d("kkk bind", service.areaName)
             val serviceImgUrl = service.imageUrl
             val requestOptions = RequestOptions()
                 .placeholder(R.drawable.image_placeholder)
@@ -165,4 +170,5 @@ class ServicePagedListAdapter(private val context: Context) :
             notifyItemChanged(itemCount - 1)
         }
     }
+
 }

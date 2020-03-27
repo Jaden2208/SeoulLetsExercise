@@ -1,6 +1,7 @@
 package com.whalez.reservationlive.ui.service_list
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.paging.PagedList
 import com.whalez.reservationlive.data.repository.NetworkState
@@ -15,8 +16,12 @@ class MainActivityViewModel(
     private val compositeDisposable = CompositeDisposable()
 
     val servicePagedList: LiveData<PagedList<Service>> by lazy {
-        servicePagedListRepository.fetchLiveServicePagedList(compositeDisposable, codeName)
+        servicePagedListRepository.fetchLiveServicePagedList(
+            compositeDisposable,
+            codeName
+        )
     }
+
 
     val networkState: LiveData<NetworkState> by lazy {
         servicePagedListRepository.getNetworkState()
