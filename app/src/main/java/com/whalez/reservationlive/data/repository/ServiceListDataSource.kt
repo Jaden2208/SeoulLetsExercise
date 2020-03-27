@@ -18,11 +18,6 @@ class ServiceListDataSource(
     private val codeName: String
 ) : PageKeyedDataSource<Int, Service>() {
 
-    override fun invalidate() {
-        super.invalidate()
-        Log.d("kkk", "invalidate 됐음")
-    }
-
     private var itemIndexBegin = FIRST_ITEM_INDEX
     private var itemIndexEnd = POST_ITEM_COUNTS
 

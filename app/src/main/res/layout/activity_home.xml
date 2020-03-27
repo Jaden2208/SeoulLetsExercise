@@ -32,6 +32,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/app_title_height"
                 android:background="@drawable/home_title"
+                app:layout_collapseMode="pin"
                 android:layout_gravity="bottom"/>
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
@@ -45,7 +46,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <LinearLayout

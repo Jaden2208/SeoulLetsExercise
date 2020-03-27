@@ -78,11 +78,19 @@
 
             </com.google.android.material.appbar.AppBarLayout>
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <TextView
+                    android:id="@+id/tv_no_data_msg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="해당 구의 데이터가 존재하지 않습니다."
+                    android:gravity="center"
+                    android:visibility="gone"/>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_service_list"
@@ -91,7 +99,7 @@
                     android:layout_margin="4dp"
                     android:scrollbars="vertical"/>
 
-            </LinearLayout>
+            </RelativeLayout>
 
 
 

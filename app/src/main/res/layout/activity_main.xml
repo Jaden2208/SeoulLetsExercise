@@ -75,10 +75,10 @@
                 app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_gu"
+                    android:id="@+id/rv_area"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@android:color/white"/>
+                    android:layout_margin="4dp"/>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_service_list"
