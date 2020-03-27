@@ -10,22 +10,29 @@
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:id="@+id/collapsing_toolbar_layout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             app:contentScrim="@android:color/transparent"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+            app:layout_scrollFlags="scroll|enterAlwaysCollapsed">
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
                 android:scaleType="fitCenter"
-                android:src="@drawable/home_image" />
+                android:src="@drawable/players"
+                android:layout_marginBottom="@dimen/app_title_height"/>
 
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/app_title_height"
+                android:background="@drawable/home_title"
+                android:layout_gravity="bottom"/>
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
@@ -33,7 +40,7 @@
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
@@ -295,6 +302,42 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="전체"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="6dp"
+                android:src="@drawable/image_placeholder"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="6dp"
+                android:src="@drawable/image_placeholder"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/app_info"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="6dp"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?selectableItemBackground"
+                app:cardCornerRadius="5dp"
+                android:onClick="onClickCode">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="앱 정보"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="20sp"
                     android:textStyle="bold" />

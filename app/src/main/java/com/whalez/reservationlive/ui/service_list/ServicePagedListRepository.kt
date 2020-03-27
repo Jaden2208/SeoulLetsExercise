@@ -13,8 +13,9 @@ import com.whalez.reservationlive.data.repository.ServiceListDataSourceFactory
 import com.whalez.reservationlive.data.vo.service_list.Service
 import io.reactivex.disposables.CompositeDisposable
 
-class ServicePagedListRepository(private val apiService: ServiceDBInterface) {
-
+class ServicePagedListRepository(
+    private val apiService: ServiceDBInterface
+) {
     private lateinit var servicePagedList: LiveData<PagedList<Service>>
     private lateinit var serviceListDataSourceFactory: ServiceListDataSourceFactory
 
@@ -31,6 +32,7 @@ class ServicePagedListRepository(private val apiService: ServiceDBInterface) {
             .build()
 
         servicePagedList = LivePagedListBuilder(serviceListDataSourceFactory, config).build()
+
         return servicePagedList
     }
 

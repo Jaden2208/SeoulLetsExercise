@@ -15,13 +15,10 @@ class MainActivityViewModel(
 
     private val compositeDisposable = CompositeDisposable()
 
-    val servicePagedList: LiveData<PagedList<Service>> by lazy {
-        servicePagedListRepository.fetchLiveServicePagedList(
-            compositeDisposable,
-            codeName
-        )
-    }
 
+    val servicePagedList: LiveData<PagedList<Service>> by lazy {
+        servicePagedListRepository.fetchLiveServicePagedList(compositeDisposable, codeName)
+    }
 
     val networkState: LiveData<NetworkState> by lazy {
         servicePagedListRepository.getNetworkState()

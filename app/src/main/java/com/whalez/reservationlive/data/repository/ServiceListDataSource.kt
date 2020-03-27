@@ -1,5 +1,6 @@
 package com.whalez.reservationlive.data.repository
 
+import android.app.Application
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.paging.PageKeyedDataSource
@@ -7,6 +8,7 @@ import com.whalez.reservationlive.data.api.FIRST_ITEM_INDEX
 import com.whalez.reservationlive.data.api.POST_ITEM_COUNTS
 import com.whalez.reservationlive.data.api.ServiceDBInterface
 import com.whalez.reservationlive.data.vo.service_list.Service
+import com.whalez.reservationlive.ui.service_list.ServicePagedListAdapter
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 
@@ -15,6 +17,11 @@ class ServiceListDataSource(
     private val compositeDisposable: CompositeDisposable,
     private val codeName: String
 ) : PageKeyedDataSource<Int, Service>() {
+
+    override fun invalidate() {
+        super.invalidate()
+        Log.d("kkk", "invalidate 됐음")
+    }
 
     private var itemIndexBegin = FIRST_ITEM_INDEX
     private var itemIndexEnd = POST_ITEM_COUNTS

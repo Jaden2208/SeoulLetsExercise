@@ -31,8 +31,6 @@ class ServicePagedListAdapter(private val context: Context) :
     val SERVICE_VIEW_TYPE = 1
     val NETWORK_VIEW_TYPE = 2
 
-//    var areaName = ""
-
     private var networkState: NetworkState? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -83,7 +81,6 @@ class ServicePagedListAdapter(private val context: Context) :
 
         fun bind(service: Service?, context: Context) {
             if (service == null) return
-//            if(!service.areaName.contains(areaName)) return
             Log.d("kkk bind", service.areaName)
             val serviceImgUrl = service.imageUrl
             val requestOptions = RequestOptions()
