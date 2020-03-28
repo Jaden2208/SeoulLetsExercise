@@ -2,10 +2,9 @@ package com.whalez.reservationlive.ui.single_service_details
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.core.app.ActivityCompat
-import com.whalez.reservationlive.util.ConstValues.Companion.SEOUL_LOCATION_X
-import com.whalez.reservationlive.util.ConstValues.Companion.SEOUL_LOCATION_Y
+import com.whalez.reservationlive.util.Utils.Companion.SEOUL_LOCATION_X
+import com.whalez.reservationlive.util.Utils.Companion.SEOUL_LOCATION_Y
 import com.whalez.reservationlive.R
 import kotlinx.android.synthetic.main.activity_view_map.*
 import net.daum.mf.map.api.MapPOIItem

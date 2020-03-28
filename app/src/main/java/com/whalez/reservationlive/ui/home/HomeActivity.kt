@@ -6,17 +6,19 @@ import android.os.Bundle
 import android.view.View
 import com.whalez.reservationlive.R
 import com.whalez.reservationlive.ui.service_list.MainActivity
-import kotlinx.android.synthetic.main.activity_home.*
+import com.whalez.reservationlive.util.Utils
+import com.whalez.reservationlive.util.isDoubleClicked
 
 class HomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
-
     }
 
     fun onClickCode(view: View) {
+        if(isDoubleClicked()) return
+
         val codeName = when(view.id){
             R.id.football -> "축구장"
             R.id.futsal -> "풋살장"

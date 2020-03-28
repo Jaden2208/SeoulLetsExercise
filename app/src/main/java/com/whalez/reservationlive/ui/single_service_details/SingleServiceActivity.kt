@@ -7,7 +7,6 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Html
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.core.content.ContextCompat
@@ -18,8 +17,8 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.signature.ObjectKey
-import com.whalez.reservationlive.util.ConstValues.Companion.SEOUL_LOCATION_X
-import com.whalez.reservationlive.util.ConstValues.Companion.SEOUL_LOCATION_Y
+import com.whalez.reservationlive.util.Utils.Companion.SEOUL_LOCATION_X
+import com.whalez.reservationlive.util.Utils.Companion.SEOUL_LOCATION_Y
 import com.whalez.reservationlive.R
 import com.whalez.reservationlive.data.api.ServiceDBClient
 import com.whalez.reservationlive.data.api.ServiceDBInterface

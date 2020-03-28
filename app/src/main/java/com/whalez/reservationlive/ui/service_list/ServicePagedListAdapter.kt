@@ -18,6 +18,7 @@ import com.whalez.reservationlive.R
 import com.whalez.reservationlive.data.repository.NetworkState
 import com.whalez.reservationlive.data.vo.service_list.Service
 import com.whalez.reservationlive.ui.single_service_details.SingleServiceActivity
+import com.whalez.reservationlive.util.Utils.Companion.CLICK_TIME_INTERVAL
 import kotlinx.android.synthetic.main.network_state_item.view.*
 import kotlinx.android.synthetic.main.service_list_item.view.*
 import java.util.*
@@ -72,7 +73,7 @@ class ServicePagedListAdapter(private val context: Context) :
 
     inner class ServiceItemViewHolder (view: View) : RecyclerView.ViewHolder(view) {
 
-        private val CLICK_TIME_INTERVAL = 500
+
 
         private var mLastClickTime = System.currentTimeMillis()
 
@@ -108,7 +109,6 @@ class ServicePagedListAdapter(private val context: Context) :
 
             itemView.setOnClickListener {
                 val clickedTime = System.currentTimeMillis()
-                Log.d("kkk clickedTime", clickedTime.toString())
                 if(clickedTime - mLastClickTime < CLICK_TIME_INTERVAL) return@setOnClickListener
                 mLastClickTime = clickedTime
 

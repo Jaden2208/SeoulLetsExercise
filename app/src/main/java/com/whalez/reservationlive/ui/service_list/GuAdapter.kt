@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.whalez.reservationlive.R
 import com.whalez.reservationlive.ui.service_list.filtered_services.FilteredServiceActivity
+import com.whalez.reservationlive.util.Utils
+import com.whalez.reservationlive.util.isDoubleClicked
 import kotlinx.android.synthetic.main.area_item.view.*
 
 class GuAdapter(private val context: Context, private val codeName: String): RecyclerView.Adapter<GuAdapter.GuViewHolder>() {
@@ -33,6 +35,9 @@ class GuAdapter(private val context: Context, private val codeName: String): Rec
             itemView.tv_gu.text = areaName
 
             itemView.setOnClickListener {
+
+                if(isDoubleClicked()) return@setOnClickListener
+
                 val intent = Intent(context, FilteredServiceActivity::class.java)
                 intent.putExtra("areaName", areaName)
                 intent.putExtra("codeName", codeName)
