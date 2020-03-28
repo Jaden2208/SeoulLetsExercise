@@ -6,8 +6,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Filter
-import android.widget.Filterable
 import androidx.core.content.ContextCompat
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
@@ -23,7 +21,6 @@ import com.whalez.reservationlive.ui.single_service_details.SingleServiceActivit
 import kotlinx.android.synthetic.main.network_state_item.view.*
 import kotlinx.android.synthetic.main.service_list_item.view.*
 import java.util.*
-import kotlin.collections.ArrayList
 
 class ServicePagedListAdapter(private val context: Context) :
     PagedListAdapter<Service, RecyclerView.ViewHolder>(ServiceDiffCallback()) {
@@ -84,7 +81,7 @@ class ServicePagedListAdapter(private val context: Context) :
             Log.d("kkk bind", service.areaName)
             val serviceImgUrl = service.imageUrl
             val requestOptions = RequestOptions()
-                .placeholder(R.drawable.image_placeholder)
+                .placeholder(R.drawable.placeholder)
                 .error(R.drawable.no_image)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .dontAnimate()

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     tools:context=".ui.single_service_details.SingleServiceActivity">
 
     <LinearLayout
@@ -17,16 +17,16 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="상세 정보를 불러올 수 없는 시설입니다."
             android:layout_margin="20dp"
-            android:textSize="18sp"/>
+            android:text="상세 정보를 불러올 수 없는 시설입니다."
+            android:textSize="18sp" />
 
         <Button
             android:id="@+id/btn_temp_goto_website"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="사이트로 바로가기"
-            android:textSize="15sp"/>
+            android:textSize="15sp" />
     </LinearLayout>
 
 
@@ -71,211 +71,289 @@
                         android:layout_width="match_parent"
                         android:layout_height="300dp"
                         android:layout_gravity="center"
+                        android:adjustViewBounds="true"
+                        android:background="@android:color/white"
                         android:scaleType="fitCenter"
-                        android:src="@drawable/image_placeholder" />
+                        android:src="@drawable/placeholder" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_margin="8dp"
+                        android:background="@color/colorBackground"
                         android:orientation="vertical">
 
-                        <TextView
-                            android:id="@+id/tv_service_name"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="신도림고등학교"
-                            android:textColor="@android:color/black"
-                            android:textSize="18sp"
-                            android:textStyle="bold" />
-
                         <LinearLayout
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:background="@android:color/white"
+                            android:orientation="vertical"
+                            android:paddingHorizontal="8dp"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="4dp">
 
-                            <TextView
-                                android:id="@+id/tv_area_name"
+                            <androidx.cardview.widget.CardView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="구로구 > "
-                                android:textSize="14sp"
-                                android:textStyle="bold" />
+                                android:layout_margin="3dp"
+                                app:cardCornerRadius="6dp">
+
+                                <TextView
+                                    android:id="@+id/tv_service_status"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="2dp"
+                                    android:padding="3dp"
+                                    android:text="접수중"
+                                    android:textColor="@android:color/holo_green_dark"
+                                    android:textSize="12sp" />
+
+                            </androidx.cardview.widget.CardView>
+
 
                             <TextView
-                                android:id="@+id/tv_place_name"
+                                android:id="@+id/tv_service_name"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="고척스카이돔 > "
-                                android:textSize="14sp"
+                                android:layout_marginTop="4dp"
+                                android:text="신도림고등학교"
+                                android:textColor="@android:color/black"
+                                android:textSize="16sp"
                                 android:textStyle="bold" />
 
-                            <TextView
-                                android:id="@+id/tv_code_name"
+
+                            <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="축구장"
-                                android:textSize="14sp"
-                                android:textStyle="bold" />
+                                android:layout_marginTop="8dp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tv_area_name"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="구로구 > "
+                                    android:textSize="14sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/tv_place_name"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="고척스카이돔 > "
+                                    android:textSize="14sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/tv_code_name"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="축구장"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0.5dp"
+                                android:layout_marginTop="8dp"
+                                android:background="@color/colorPrimary" />
+
+                            <RelativeLayout
+                                android:id="@+id/btn_view_on_map"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:paddingVertical="4dp">
+
+                                <ImageView
+                                    android:id="@+id/iv_place"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_centerVertical="true"
+                                    android:src="@drawable/ic_place" />
+
+                                <TextView
+                                    android:id="@+id/tv_address"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginStart="6dp"
+                                    android:layout_toEndOf="@+id/iv_place"
+                                    android:text="서울 구로구 신도림로 2020"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="14sp" />
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_centerVertical="true"
+                                    android:src="@drawable/ic_next" />
+
+                            </RelativeLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0.5dp"
+                                android:background="@color/colorPrimary" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="3dp"
+                                android:padding="5dp"
+                                android:text="예약사이트 바로가기 ▶"
+                                android:textColor="@color/colorPrimaryDark" />
 
                         </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:background="@color/colorPrimary" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal">
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:background="@android:color/white"
+                            android:orientation="vertical"
+                            android:padding="8dp">
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="2dp"
-                                android:text="주소: "
-                                android:textSize="12sp"
-                                android:textStyle="bold" />
 
-                            <TextView
-                                android:id="@+id/tv_address"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="2dp"
-                                android:text="서울 구로구 신도림로 2020"
-                                android:textSize="12sp" />
+                            <!--                            <TextView-->
+                            <!--                                android:layout_width="wrap_content"-->
+                            <!--                                android:layout_height="wrap_content"-->
+                            <!--                                android:text="시설 정보"-->
+                            <!--                                android:textSize="14sp"-->
+                            <!--                                android:textStyle="bold" />-->
 
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:adjustViewBounds="true"
+                                    android:src="@drawable/ic_payat" />
+
+                                <TextView
+                                    android:id="@+id/tv_pay_at"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="6dp"
+                                    android:gravity="center_vertical"
+                                    android:text="유료"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="4dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:adjustViewBounds="true"
+                                    android:src="@drawable/ic_clock" />
+
+                                <TextView
+                                    android:id="@+id/tv_available_time"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="6dp"
+                                    android:text="06:00 ~ 22:00"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
                         </LinearLayout>
 
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="15dp"
-                            android:text="시설 정보"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:background="@color/colorPrimary" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal">
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:background="@android:color/white"
+                            android:orientation="vertical"
+                            android:padding="6dp">
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="2dp"
-                                android:text="서비스 상태: "
-                                android:textSize="12sp"
-                                android:textStyle="bold" />
+                                android:layout_marginVertical="4dp"
+                                android:drawableStart="@drawable/ic_bell"
+                                android:gravity="center_vertical"
+                                android:text=" 공지사항"
+                                android:textColor="@android:color/black"
+                                android:textSize="15sp" />
 
                             <TextView
-                                android:id="@+id/tv_service_status"
+                                android:id="@+id/tv_notice"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="2dp"
-                                android:text="접수중"
-                                android:textSize="12sp" />
+                                android:layout_marginTop="6dp"
+                                android:text="아아아아, 공지입니다! 아아."
+                                android:textColor="@android:color/black"
+                                android:textSize="13sp" />
 
                         </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:background="@color/colorPrimary" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal">
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@android:color/white"
+                            android:orientation="vertical"
+                            android:padding="6dp">
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="2dp"
-                                android:text="유료 여부: "
-                                android:textSize="12sp"
-                                android:textStyle="bold" />
+                                android:layout_marginVertical="4dp"
+                                android:drawableStart="@drawable/ic_details"
+                                android:gravity="center_vertical"
+                                android:text=" 상세정보"
+                                android:textColor="@android:color/black"
+                                android:textSize="15sp" />
 
                             <TextView
-                                android:id="@+id/tv_pay_at"
+                                android:id="@+id/tv_detail_content"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="2dp"
-                                android:text="유료"
-                                android:textSize="12sp" />
+                                android:layout_marginTop="6dp"
+                                android:text="상세 정보 어쩌구가 저쩌구"
+                                android:textColor="@android:color/black"
+                                android:textSize="13sp" />
 
                         </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="이용 가능 시간: "
-                                android:textSize="12sp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:id="@+id/tv_available_time"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="2dp"
-                                android:text="06:00 ~ 22:00"
-                                android:textSize="12sp" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="2dp"
-                                android:text="접수 종료 기간: "
-                                android:textSize="12sp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:id="@+id/tv_reception_end_date"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="2dp"
-                                android:text="~ 2020-12-31 18:00:00.0"
-                                android:textSize="12sp" />
-
-                        </LinearLayout>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
-                            android:text="공지"
-                            android:textSize="12sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/tv_notice"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
-                            android:text="아아아아, 공지입니다! 아아."
-                            android:textSize="12sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
-                            android:text="상세 정보"
-                            android:textSize="12sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/tv_detail_content"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
-                            android:text="상세 정보 어쩌구가 저쩌구"
-                            android:textSize="12sp" />
 
                     </LinearLayout>
+
+
                 </LinearLayout>
 
             </ScrollView>

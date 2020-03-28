@@ -1,7 +1,6 @@
 package com.whalez.reservationlive.ui.service_list.filtered_services
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -36,7 +35,7 @@ class FilteredAdapter(private val serviceList: List<Service>, val context: Conte
             if (service == null) return
             val serviceImgUrl = service.imageUrl
             val requestOptions = RequestOptions()
-                .placeholder(R.drawable.image_placeholder)
+                .placeholder(R.drawable.placeholder)
                 .error(R.drawable.no_image)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .dontAnimate()

@@ -36,8 +36,8 @@ data class DetailService(
 //    val pLACESN: String,
 //    @SerializedName("RCEPTBEGDT")
 //    val rCEPTBEGDT: String,
-    @SerializedName("RCEPTENDDT")
-    val receptionEndDate: String,
+//    @SerializedName("RCEPTENDDT")
+//    val receptionEndDate: String,
 //    @SerializedName("RCEPTMTH_NM")
 //    val rCEPTMTHNM: String,
 //    @SerializedName("RCPTBGNDT")
