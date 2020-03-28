@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.single_service_details.SingleServiceActivity">
 
+
     <LinearLayout
         android:id="@+id/no_data_layout"
         android:layout_width="match_parent"
@@ -105,7 +106,8 @@
                                     android:padding="3dp"
                                     android:text="접수중"
                                     android:textColor="@android:color/holo_green_dark"
-                                    android:textSize="12sp" />
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
 
                             </androidx.cardview.widget.CardView>
 
@@ -303,7 +305,8 @@
                                 android:gravity="center_vertical"
                                 android:text=" 공지사항"
                                 android:textColor="@android:color/black"
-                                android:textSize="15sp" />
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
 
                             <TextView
                                 android:id="@+id/tv_notice"
@@ -338,7 +341,8 @@
                                 android:gravity="center_vertical"
                                 android:text=" 상세정보"
                                 android:textColor="@android:color/black"
-                                android:textSize="15sp" />
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
 
                             <TextView
                                 android:id="@+id/tv_detail_content"
@@ -353,7 +357,6 @@
 
                     </LinearLayout>
 
-
                 </LinearLayout>
 
             </ScrollView>
@@ -361,5 +364,17 @@
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@android:color/transparent"
+        android:elevation="0dp"
+        android:src="@drawable/ic_back"
+        app:backgroundTint="@color/imageFilter"
+        app:elevation="0dp"
+        app:fabSize="mini" />
 
 </RelativeLayout>

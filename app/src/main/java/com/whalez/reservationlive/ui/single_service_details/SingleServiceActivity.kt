@@ -36,6 +36,8 @@ class SingleServiceActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_single_service)
 
+        btn_back.setOnClickListener { finish() }
+
         val serviceId = intent.getStringExtra("id")
         val serviceUrl = intent.getStringExtra("serviceUrl")
 

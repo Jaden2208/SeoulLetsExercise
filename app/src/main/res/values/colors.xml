@@ -6,6 +6,7 @@
     <color name="colorBackground">#e4e7ec</color>
 
     <color name="imageFilter">#50000000</color>
+    <color name="topBarFilter">#50ffffff</color>
 
     <color name="reservationPaused">#FF7725</color>
     <color name="reservationFinished">#FF0000</color>
