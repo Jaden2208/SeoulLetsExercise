@@ -14,4 +14,15 @@
 
     <color name="colorSeoul">#AE1932</color>
     <color name="pantone2020">#0f4c81</color>
+
+    <color name="soccerBtn">#3D5AFE</color>
+    <color name="futsalBtn">#00E5FF</color>
+    <color name="baseballBtn">#FF1744</color>
+    <color name="basketballBtn">#76FF03</color>
+    <color name="tennisBtn">#FF9100</color>
+    <color name="badmintonBtn">#D500F9</color>
+    <color name="volleyballBtn">#FFEA00</color>
+    <color name="multipurposeBtn">#7C4DFF</color>
+    <color name="allCodeBtn">#AE1932</color>
+
 </resources>
