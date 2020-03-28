@@ -106,10 +106,10 @@ data class DetailService(
 //    val uSETIMEUNITCODENM: String,
 //    @SerializedName("WAITNUM")
 //    val wAITNUM: Double,
-//    @SerializedName("X")
-//    val x: String,
-//    @SerializedName("Y")
-//    val y: String,
+    @SerializedName("X")
+    val xLocation: String,
+    @SerializedName("Y")
+    val yLocation: String,
     @SerializedName("V_MAX")
     val serviceEnd: String,
     @SerializedName("V_MIN")

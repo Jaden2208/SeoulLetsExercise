@@ -7,6 +7,7 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Html
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.core.content.ContextCompat
@@ -17,6 +18,8 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.signature.ObjectKey
+import com.whalez.reservationlive.util.ConstValues.Companion.SEOUL_LOCATION_X
+import com.whalez.reservationlive.util.ConstValues.Companion.SEOUL_LOCATION_Y
 import com.whalez.reservationlive.R
 import com.whalez.reservationlive.data.api.ServiceDBClient
 import com.whalez.reservationlive.data.api.ServiceDBInterface
@@ -24,7 +27,6 @@ import com.whalez.reservationlive.data.repository.NetworkState
 import com.whalez.reservationlive.data.repository.ServiceDetailsRepository
 import com.whalez.reservationlive.data.vo.service_detail.ServiceDetails
 import kotlinx.android.synthetic.main.activity_single_service.*
-import kotlinx.android.synthetic.main.service_list_item.*
 import java.util.*
 
 class SingleServiceActivity : AppCompatActivity() {
@@ -32,11 +34,23 @@ class SingleServiceActivity : AppCompatActivity() {
     private lateinit var viewModel: SingleServiceViewModel
     private lateinit var serviceDetailsRepository: ServiceDetailsRepository
 
+    private var xLocation: Double = SEOUL_LOCATION_X
+    private var yLocation: Double = SEOUL_LOCATION_Y
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_single_service)
 
         btn_back.setOnClickListener { finish() }
+
+        btn_view_on_map.setOnClickListener {
+            val intent = Intent(this, ViewMapActivity::class.java)
+            intent.putExtra("xLocation", xLocation)
+            intent.putExtra("yLocation", yLocation)
+            intent.putExtra("serviceName", tv_service_name.text)
+            startActivity(intent)
+        }
 
         val serviceId = intent.getStringExtra("id")
         val serviceUrl = intent.getStringExtra("serviceUrl")
@@ -55,11 +69,13 @@ class SingleServiceActivity : AppCompatActivity() {
             tv_error.visibility = if (it == NetworkState.ERROR) View.VISIBLE else View.GONE
         })
 
+
     }
 
     @SuppressLint("SetTextI18n")
     fun bindUI(it: ServiceDetails, serviceUrl: String?) {
         // null 이 뜨는 경우가 분명히 있음 지우면 안됨.
+
         if(it.detailList == null) {
             main_layout.visibility = View.GONE
             no_data_layout.visibility = View.VISIBLE
@@ -107,6 +123,9 @@ class SingleServiceActivity : AppCompatActivity() {
         tv_available_time.text = "${detail.serviceBegin} ~ ${detail.serviceEnd}"
         tv_notice.text = detail.notice.htmlToString()
         tv_detail_content.text = detail.detailContent.htmlToString()
+
+        xLocation = detail.xLocation.toDouble()
+        yLocation = detail.yLocation.toDouble()
     }
 
     private fun String.htmlToString() : String {

@@ -63,4 +63,7 @@ dependencies {
 
     // PowerMenu
     implementation "com.github.skydoves:powermenu:2.1.2"
+
+    // KakaoMap
+    implementation files('libs/libDaumMapAndroid.jar')
 }

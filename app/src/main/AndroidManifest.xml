@@ -3,6 +3,7 @@
     package="com.whalez.reservationlive">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -12,7 +13,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.service_list.filtered_services.FilteredServiceActivity"></activity>
+
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="3356662b72e414216afb700594c07300" />
+
+        <activity android:name=".ui.single_service_details.ViewMapActivity" />
+        <activity android:name=".ui.service_list.filtered_services.FilteredServiceActivity" />
         <activity android:name=".ui.home.HomeActivity" />
         <activity
             android:name=".ui.SplashActivity"

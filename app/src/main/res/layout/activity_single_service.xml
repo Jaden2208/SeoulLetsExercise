@@ -111,7 +111,6 @@
 
                             </androidx.cardview.widget.CardView>
 
-
                             <TextView
                                 android:id="@+id/tv_service_name"
                                 android:layout_width="wrap_content"
@@ -167,6 +166,7 @@
                                 android:layout_height="wrap_content"
                                 android:clickable="true"
                                 android:focusable="true"
+                                android:foreground="?selectableItemBackground"
                                 android:gravity="center_vertical"
                                 android:orientation="horizontal"
                                 android:paddingVertical="4dp">
@@ -226,14 +226,6 @@
                             android:background="@android:color/white"
                             android:orientation="vertical"
                             android:padding="8dp">
-
-
-                            <!--                            <TextView-->
-                            <!--                                android:layout_width="wrap_content"-->
-                            <!--                                android:layout_height="wrap_content"-->
-                            <!--                                android:text="시설 정보"-->
-                            <!--                                android:textSize="14sp"-->
-                            <!--                                android:textStyle="bold" />-->
 
                             <LinearLayout
                                 android:layout_width="match_parent"
