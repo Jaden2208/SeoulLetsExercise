@@ -2,13 +2,14 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cv_gu"
-    android:layout_width="85dp"
+    android:layout_width="80dp"
     android:layout_height="50dp"
     android:layout_margin="3dp"
     android:clickable="true"
     android:focusable="true"
     android:foreground="?selectableItemBackground"
-    app:cardBackgroundColor="@color/colorPrimary"
+    app:cardBackgroundColor="@android:color/white"
+    app:cardElevation="3dp"
     app:cardCornerRadius="3dp">
 
     <TextView
@@ -16,10 +17,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:fontFamily="@font/font_nanum_gothic"
+        android:fontFamily="@font/font_mapodpp"
         android:text="구로구"
-        android:textColor="@android:color/white"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="16sp"
-        android:textStyle="bold" />
+        android:textStyle="normal" />
 
 </androidx.cardview.widget.CardView>

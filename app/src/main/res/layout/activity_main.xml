@@ -48,17 +48,27 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
+                        <ImageView
+                            android:id="@+id/iv_sport_img"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/soccer_logo"
+                            android:adjustViewBounds="true"
+                            android:tint="@color/imageFilter"/>
+
                         <TextView
                             android:id="@+id/tv_code_name"
                             android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:layout_alignParentStart="true"
+                            android:layout_alignParentBottom="true"
                             android:layout_margin="10dp"
                             android:gravity="center"
                             android:text=" 축구장"
+                            android:fontFamily="@font/font_mapodpp"
                             android:textColor="@color/colorBackground"
-                            android:textSize="20sp"
-                            android:textStyle="bold" />
+                            android:textSize="30sp" />
 
 
 
