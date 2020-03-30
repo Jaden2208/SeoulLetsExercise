@@ -15,14 +15,14 @@
     <color name="colorSeoul">#AE1932</color>
     <color name="pantone2020">#0f4c81</color>
 
-    <color name="soccerBtn">#00152C</color>
-    <color name="futsalBtn">#C3B808</color>
-    <color name="baseballBtn">#D50000</color>
-    <color name="basketballBtn">#8A2904</color>
-    <color name="tennisBtn">#59AF0F</color>
-    <color name="badmintonBtn">#84A82F</color>
+    <color name="soccerBtn">#333333</color>
+    <color name="futsalBtn">#00A16E</color>
+    <color name="baseballBtn">#FF2D2D</color>
+    <color name="basketballBtn">#964B00</color>
+    <color name="tennisBtn">#9DC500</color>
+    <color name="badmintonBtn">#D6D600</color>
     <color name="volleyballBtn">#9DDFE1</color>
-    <color name="multipurposeBtn">#5731C3</color>
+    <color name="multipurposeBtn">#5F5FFF</color>
     <color name="allCodeBtn">#AE1932</color>
 
 </resources>
