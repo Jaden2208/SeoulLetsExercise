@@ -122,11 +122,11 @@ class FilteredServiceActivity : AppCompatActivity() {
             "전체" -> {
                 codeName = ""
                 codeIcon = NO_NEED_CODE_IMG
-                codeImage = R.drawable.players
+                codeImage = R.drawable.only_players
             }
             else -> {
                 codeIcon = NO_NEED_CODE_IMG
-                codeImage = R.drawable.players
+                codeImage = R.drawable.only_players
             }
         }
         if(codeIcon != NO_NEED_CODE_IMG) tv_code_name.setCompoundDrawablesWithIntrinsicBounds(codeIcon, 0, 0, 0)

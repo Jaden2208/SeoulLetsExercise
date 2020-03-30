@@ -6,7 +6,7 @@
     <color name="colorBackground">#e4e7ec</color>
 
     <color name="imageFilter">#50000000</color>
-    <color name="topBarFilter">#50ffffff</color>
+    <color name="topBarFilter">#1DFFFFFF</color>
 
     <color name="reservationPaused">#FF7725</color>
     <color name="reservationFinished">#FF0000</color>
@@ -15,14 +15,14 @@
     <color name="colorSeoul">#AE1932</color>
     <color name="pantone2020">#0f4c81</color>
 
-    <color name="soccerBtn">#3D5AFE</color>
-    <color name="futsalBtn">#00E5FF</color>
-    <color name="baseballBtn">#FF1744</color>
-    <color name="basketballBtn">#76FF03</color>
-    <color name="tennisBtn">#FF9100</color>
-    <color name="badmintonBtn">#D500F9</color>
-    <color name="volleyballBtn">#FFEA00</color>
-    <color name="multipurposeBtn">#7C4DFF</color>
+    <color name="soccerBtn">#00152C</color>
+    <color name="futsalBtn">#C3B808</color>
+    <color name="baseballBtn">#D50000</color>
+    <color name="basketballBtn">#8A2904</color>
+    <color name="tennisBtn">#59AF0F</color>
+    <color name="badmintonBtn">#84A82F</color>
+    <color name="volleyballBtn">#9DDFE1</color>
+    <color name="multipurposeBtn">#5731C3</color>
     <color name="allCodeBtn">#AE1932</color>
 
 </resources>

@@ -3,5 +3,6 @@
 
     <dimen name="app_title_height">150dp</dimen>
     <dimen name="app_bar_height">200dp</dimen>
+    <dimen name="home_icon_size">70dp</dimen>
 
 </resources>

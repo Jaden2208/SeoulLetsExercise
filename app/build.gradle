@@ -66,4 +66,7 @@ dependencies {
 
     // KakaoMap
     implementation files('libs/libDaumMapAndroid.jar')
+
+    // ads
+    implementation 'com.google.android.gms:play-services-ads:19.0.1'
 }

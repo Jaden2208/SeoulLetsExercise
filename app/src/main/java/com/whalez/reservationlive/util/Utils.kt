@@ -12,10 +12,10 @@ class Utils {
 
 }
 
-private var mLastClickTime = System.currentTimeMillis()
-fun isDoubleClicked(): Boolean{
+private var mLastClickTime: Long = 0
+fun isDoubleClicked(): Boolean {
     val clickedTime = System.currentTimeMillis()
-    if(clickedTime - mLastClickTime < CLICK_TIME_INTERVAL) return true
+    if (clickedTime - mLastClickTime < CLICK_TIME_INTERVAL) return true
     mLastClickTime = clickedTime
     return false
 }
