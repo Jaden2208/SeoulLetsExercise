@@ -13,7 +13,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="5dp"
+        android:paddingVertical="5dp"
         android:background="@drawable/rectangle_top_curved"
         android:src="@drawable/ic_dash" />
 
@@ -36,7 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
+            android:layout_margin="20dp"
             android:text="다운 받아주신 모든 분들께 진심으로 감사드립니다."
             android:textColor="@android:color/black"
             android:textSize="14sp" />
@@ -45,7 +45,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30dp"
-            android:layout_marginTop="20dp"
             android:orientation="horizontal">
 
             <TextView

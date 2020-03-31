@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.pm.PackageInfo
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -44,19 +45,24 @@ class HomeActivity : AppCompatActivity() {
         MobileAds.initialize(this) { }
 
         btn_app_info.setOnClickListener {
-
-            val layout = findViewById<LinearLayout>(R.id.app_info_layout)
-            val sheetBehavior = BottomSheetBehavior.from(layout)
-            if(sheetBehavior.state != BottomSheetBehavior.STATE_EXPANDED){
-                sheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
-            } else {
-                sheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
-            }
-
+            val appInfoLayout = findViewById<LinearLayout>(R.id.app_info_layout)
+            showBottomSheet(appInfoLayout)
         }
         btn_licenses.setOnClickListener {
+            val intent = Intent(this, LicensesActivity::class.java)
+            startActivity(intent)
         }
 
+    }
+
+    private fun showBottomSheet(layout: LinearLayout){
+
+        val sheetBehavior = BottomSheetBehavior.from(layout)
+        if(sheetBehavior.state != BottomSheetBehavior.STATE_EXPANDED){
+            sheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
+        } else {
+            sheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
+        }
     }
 
     fun onClickCode(view: View) {
