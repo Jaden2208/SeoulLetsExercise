@@ -8,11 +8,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.whalez.reservationlive.R
 import com.whalez.reservationlive.ui.service_list.filtered_services.FilteredServiceActivity
-import com.whalez.reservationlive.util.Utils
 import com.whalez.reservationlive.util.isDoubleClicked
 import kotlinx.android.synthetic.main.area_item.view.*
 
-class GuAdapter(private val context: Context, private val codeName: String): RecyclerView.Adapter<GuAdapter.GuViewHolder>() {
+class AreaAdapter(private val context: Context, private val codeName: String): RecyclerView.Adapter<AreaAdapter.GuViewHolder>() {
 
     private val areaList: List<String> = arrayListOf(
         "강남구", "강동구", "강북구", "강서구", "관악구", "광진구", "구로구", "금천구", "노원구",

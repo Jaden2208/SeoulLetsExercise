@@ -17,16 +17,15 @@
         <meta-data
             android:name="com.kakao.sdk.AppKey"
             android:value="3356662b72e414216afb700594c07300" />
-
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="@string/admob_app_id"/>
+            android:value="@string/admob_app_id" />
 
         <activity android:name=".ui.single_service_details.ViewMapActivity" />
         <activity android:name=".ui.service_list.filtered_services.FilteredServiceActivity" />
         <activity android:name=".ui.home.HomeActivity" />
         <activity
-            android:name=".ui.SplashActivity"
+            android:name=".ui.home.SplashActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,7 +34,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.single_service_details.SingleServiceActivity" />
-        <activity android:name=".ui.service_list.MainActivity" />
+        <activity android:name=".ui.service_list.ServiceListActivity" />
     </application>
 
 </manifest>

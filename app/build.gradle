@@ -12,6 +12,7 @@ android {
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
+        buildConfigField "int", "MIN_SDK_VERSION", "$minSdkVersion.apiLevel"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -21,6 +22,11 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+
+    compileOptions {
+        targetCompatibility = "8"
+        sourceCompatibility = "8"
     }
 
 }
@@ -61,12 +67,12 @@ dependencies {
     implementation 'io.reactivex.rxjava2:rxjava:2.2.7'
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
 
-    // PowerMenu
-    implementation "com.github.skydoves:powermenu:2.1.2"
-
     // KakaoMap
     implementation files('libs/libDaumMapAndroid.jar')
 
     // Google Admob
     implementation 'com.google.android.gms:play-services-ads:19.0.1'
+
+    // Lottie Animation Library
+    implementation 'com.airbnb.android:lottie:3.4.0'
 }

@@ -1,4 +1,4 @@
-package com.whalez.reservationlive.ui.service_list
+package com.whalez.reservationlive.data.repository
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -13,7 +13,7 @@ import com.whalez.reservationlive.data.repository.ServiceListDataSourceFactory
 import com.whalez.reservationlive.data.vo.service_list.Service
 import io.reactivex.disposables.CompositeDisposable
 
-class ServicePagedListRepository(
+class ServiceListRepository(
     private val apiService: ServiceDBInterface
 ) {
     private lateinit var servicePagedList: LiveData<PagedList<Service>>

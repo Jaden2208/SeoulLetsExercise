@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
-    tools:context=".ui.service_list.MainActivity">
+    tools:context=".ui.service_list.ServiceListActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

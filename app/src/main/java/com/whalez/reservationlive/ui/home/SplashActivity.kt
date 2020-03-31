@@ -1,4 +1,4 @@
-package com.whalez.reservationlive.ui
+package com.whalez.reservationlive.ui.home
 
 import android.content.Intent
 import android.os.Build
@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.SystemClock
 import androidx.annotation.RequiresApi
-import com.whalez.reservationlive.ui.home.HomeActivity
 
 class SplashActivity : AppCompatActivity() {
 

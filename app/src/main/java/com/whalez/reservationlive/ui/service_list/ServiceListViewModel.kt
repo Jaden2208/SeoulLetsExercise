@@ -1,15 +1,15 @@
 package com.whalez.reservationlive.ui.service_list
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.paging.PagedList
 import com.whalez.reservationlive.data.repository.NetworkState
+import com.whalez.reservationlive.data.repository.ServiceListRepository
 import com.whalez.reservationlive.data.vo.service_list.Service
 import io.reactivex.disposables.CompositeDisposable
 
-class MainActivityViewModel(
-    private val servicePagedListRepository: ServicePagedListRepository,
+class ServiceListViewModel(
+    private val servicePagedListRepository: ServiceListRepository,
     codeName: String
 ) : ViewModel() {
 
