@@ -7,6 +7,7 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Html
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.core.content.ContextCompat
@@ -17,14 +18,14 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.signature.ObjectKey
-import com.whalez.reservationlive.util.Utils.Companion.SEOUL_LOCATION_X
-import com.whalez.reservationlive.util.Utils.Companion.SEOUL_LOCATION_Y
 import com.whalez.reservationlive.R
 import com.whalez.reservationlive.data.api.ServiceDBClient
 import com.whalez.reservationlive.data.api.ServiceDBInterface
 import com.whalez.reservationlive.data.repository.NetworkState
 import com.whalez.reservationlive.data.repository.ServiceDetailsRepository
 import com.whalez.reservationlive.data.vo.service_detail.ServiceDetails
+import com.whalez.reservationlive.util.Utils.Companion.NO_LOCATION_X
+import com.whalez.reservationlive.util.Utils.Companion.NO_LOCATION_Y
 import com.whalez.reservationlive.util.isDoubleClicked
 import kotlinx.android.synthetic.main.activity_single_service.*
 import java.util.*
@@ -34,9 +35,12 @@ class SingleServiceActivity : AppCompatActivity() {
     private lateinit var viewModel: SingleServiceViewModel
     private lateinit var serviceDetailsRepository: ServiceDetailsRepository
 
-    private var xLocation: Double = SEOUL_LOCATION_X
-    private var yLocation: Double = SEOUL_LOCATION_Y
+    private var xLocation = NO_LOCATION_X
+    private var yLocation = NO_LOCATION_Y
+    private var address: String? = null
 
+    private var serviceId: String? = null
+    private var serviceUrl: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,11 +54,15 @@ class SingleServiceActivity : AppCompatActivity() {
             intent.putExtra("xLocation", xLocation)
             intent.putExtra("yLocation", yLocation)
             intent.putExtra("serviceName", tv_service_name.text)
+            intent.putExtra("address", address)
             startActivity(intent)
         }
 
-        val serviceId = intent.getStringExtra("id")
-        val serviceUrl = intent.getStringExtra("serviceUrl")
+        serviceId = intent.getStringExtra("id")
+        serviceUrl = intent.getStringExtra("serviceUrl")
+        if(serviceUrl!!.contains("yeyak.seoul")){
+            serviceUrl = "http://yeyak.seoul.go.kr/mobile/detailView.web?rsvsvcid=$serviceId"
+        }
 
         val apiService: ServiceDBInterface = ServiceDBClient.getClient()
         serviceDetailsRepository = ServiceDetailsRepository(apiService)
@@ -62,7 +70,7 @@ class SingleServiceActivity : AppCompatActivity() {
         viewModel = getViewModel(serviceId!!)
 
         viewModel.serviceDetails.observe(this, Observer {
-            bindUI(it, serviceUrl)
+            bindUI(it)
         })
 
         viewModel.networkState.observe(this, Observer {
@@ -70,24 +78,23 @@ class SingleServiceActivity : AppCompatActivity() {
             tv_error.visibility = if (it == NetworkState.ERROR) View.VISIBLE else View.GONE
         })
 
+    }
 
+    fun gotoWebsite(view: View){
+        if(serviceUrl == null){
+            Toast.makeText(this, "사이트 링크가 존재하지 않습니다.", Toast.LENGTH_SHORT).show()
+            return
+        }
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(serviceUrl))
+        startActivity(intent)
     }
 
     @SuppressLint("SetTextI18n")
-    fun bindUI(it: ServiceDetails, serviceUrl: String?) {
+    fun bindUI(it: ServiceDetails) {
         // null 이 뜨는 경우가 분명히 있음 지우면 안됨.
-
         if(it.detailList == null) {
             main_layout.visibility = View.GONE
             no_data_layout.visibility = View.VISIBLE
-            btn_temp_goto_website.setOnClickListener {
-                if(serviceUrl == null){
-                    Toast.makeText(this, "사이트 링크가 존재하지 않습니다.", Toast.LENGTH_SHORT).show()
-                    return@setOnClickListener
-                }
-                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(serviceUrl))
-                startActivity(intent)
-            }
             return
         }
 
@@ -125,8 +132,14 @@ class SingleServiceActivity : AppCompatActivity() {
         tv_notice.text = detail.notice.htmlToString()
         tv_detail_content.text = detail.detailContent.htmlToString()
 
-        xLocation = detail.xLocation.toDouble()
-        yLocation = detail.yLocation.toDouble()
+        if(detail.xLocation.isNotEmpty() && detail.yLocation.isNotEmpty()){
+            xLocation = detail.xLocation.toDouble()
+            yLocation = detail.yLocation.toDouble()
+        }
+        if(detail.address.isNotEmpty()){
+            address = detail.address
+        }
+
     }
 
     private fun String.htmlToString() : String {

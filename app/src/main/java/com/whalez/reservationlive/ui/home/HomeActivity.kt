@@ -23,6 +23,7 @@ import com.whalez.reservationlive.R
 import com.whalez.reservationlive.ui.service_list.ServiceListActivity
 import com.whalez.reservationlive.util.isDoubleClicked
 import kotlinx.android.synthetic.main.activity_home.*
+import kotlinx.android.synthetic.main.bottom_app_info.view.*
 
 
 class HomeActivity : AppCompatActivity() {
@@ -38,6 +39,7 @@ class HomeActivity : AppCompatActivity() {
         showAd()
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
@@ -46,6 +48,10 @@ class HomeActivity : AppCompatActivity() {
 
         btn_app_info.setOnClickListener {
             val appInfoLayout = findViewById<LinearLayout>(R.id.app_info_layout)
+            val packageInfo = packageManager.getPackageInfo(packageName, 0)
+
+            appInfoLayout.tv_app_version.text = "${appVersionCode(packageInfo)}.${appVersionName(packageInfo)}"
+            appInfoLayout.tv_min_sdk_version.text = "Android api ${minSdkVersion()} 이상"
             showBottomSheet(appInfoLayout)
         }
         btn_licenses.setOnClickListener {

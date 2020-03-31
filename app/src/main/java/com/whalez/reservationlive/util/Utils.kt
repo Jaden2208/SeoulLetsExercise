@@ -6,8 +6,8 @@ class Utils {
 
     companion object {
         const val CLICK_TIME_INTERVAL = 500
-        const val SEOUL_LOCATION_X = 127.0016985
-        const val SEOUL_LOCATION_Y = 37.5642135
+        const val NO_LOCATION_X = 0.0
+        const val NO_LOCATION_Y = 0.0
     }
 
 }

@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.single_service_details.SingleServiceActivity">
 
-
     <LinearLayout
         android:id="@+id/no_data_layout"
         android:layout_width="match_parent"
@@ -18,16 +17,20 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_margin="14sp"
             android:text="상세 정보를 불러올 수 없는 시설입니다."
             android:textSize="18sp" />
 
-        <Button
+        <TextView
             android:id="@+id/btn_temp_goto_website"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="10dp"
             android:text="사이트로 바로가기"
-            android:textSize="15sp" />
+            android:textColor="@android:color/white"
+            android:onClick="gotoWebsite"
+            android:background="@drawable/rectangle_curved"
+            android:textSize="14sp" />
     </LinearLayout>
 
 
@@ -47,6 +50,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
+                android:indeterminateTint="@color/colorPrimaryDark"
                 android:visibility="gone" />
 
             <TextView
@@ -210,6 +214,7 @@
                                 android:layout_marginTop="3dp"
                                 android:padding="5dp"
                                 android:text="예약사이트 바로가기 ▶"
+                                android:onClick="gotoWebsite"
                                 android:textColor="@color/colorPrimaryDark" />
 
                         </LinearLayout>

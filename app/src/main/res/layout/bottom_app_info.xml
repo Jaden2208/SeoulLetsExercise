@@ -58,7 +58,7 @@
                 android:id="@+id/tv_app_version"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="1.1.0"
+                android:text="0.0.0"
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/app_info_content_text_size" />
 
@@ -82,7 +82,7 @@
                 android:id="@+id/tv_min_sdk_version"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Android api 23 이상"
+                android:text="api"
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/app_info_content_text_size" />
 
