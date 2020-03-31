@@ -49,6 +49,7 @@ class HomeActivity : AppCompatActivity() {
             showBottomSheet(appInfoLayout)
         }
         btn_licenses.setOnClickListener {
+            if (isDoubleClicked()) return@setOnClickListener
             val intent = Intent(this, LicensesActivity::class.java)
             startActivity(intent)
         }

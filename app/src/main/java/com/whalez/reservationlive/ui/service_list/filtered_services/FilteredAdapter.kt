@@ -1,6 +1,7 @@
 package com.whalez.reservationlive.ui.service_list.filtered_services
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +13,11 @@ import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.signature.ObjectKey
 import com.whalez.reservationlive.R
 import com.whalez.reservationlive.data.vo.service_list.Service
+import com.whalez.reservationlive.ui.single_service_details.SingleServiceActivity
+import com.whalez.reservationlive.util.Utils
+import com.whalez.reservationlive.util.Utils.Companion.CLICK_TIME_INTERVAL
+import com.whalez.reservationlive.util.isDoubleClicked
+import com.whalez.reservationlive.util.mLastClickTime
 import kotlinx.android.synthetic.main.service_list_item.view.*
 import java.util.*
 
@@ -31,6 +37,9 @@ class FilteredAdapter(private val serviceList: List<Service>, val context: Conte
     }
 
     inner class FilteredViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+
+//        private var mLastClickTime = System.currentTimeMillis()
+
         fun bind(service: Service?, context: Context, position: Int) {
             if (service == null) return
             val serviceImgUrl = service.imageUrl
@@ -60,6 +69,14 @@ class FilteredAdapter(private val serviceList: List<Service>, val context: Conte
                     else -> R.color.colorAccent
                 }
                 cv_tv_service_status.setTextColor(ContextCompat.getColor(context, statusColor))
+            }
+
+            itemView.setOnClickListener {
+                if (isDoubleClicked()) return@setOnClickListener
+                val intent = Intent(context, SingleServiceActivity::class.java)
+                intent.putExtra("id", service.serviceId)
+                intent.putExtra("serviceUrl", service.serviceUrl)
+                context.startActivity(intent)
             }
         }
 

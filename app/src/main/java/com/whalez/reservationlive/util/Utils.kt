@@ -12,7 +12,7 @@ class Utils {
 
 }
 
-private var mLastClickTime: Long = 0
+var mLastClickTime: Long = 0
 fun isDoubleClicked(): Boolean {
     val clickedTime = System.currentTimeMillis()
     if (clickedTime - mLastClickTime < CLICK_TIME_INTERVAL) return true

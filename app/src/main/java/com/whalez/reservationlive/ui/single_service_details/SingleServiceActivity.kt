@@ -25,6 +25,7 @@ import com.whalez.reservationlive.data.api.ServiceDBInterface
 import com.whalez.reservationlive.data.repository.NetworkState
 import com.whalez.reservationlive.data.repository.ServiceDetailsRepository
 import com.whalez.reservationlive.data.vo.service_detail.ServiceDetails
+import com.whalez.reservationlive.util.isDoubleClicked
 import kotlinx.android.synthetic.main.activity_single_service.*
 import java.util.*
 
@@ -44,6 +45,7 @@ class SingleServiceActivity : AppCompatActivity() {
         btn_back.setOnClickListener { finish() }
 
         btn_view_on_map.setOnClickListener {
+            if (isDoubleClicked()) return@setOnClickListener
             val intent = Intent(this, ViewMapActivity::class.java)
             intent.putExtra("xLocation", xLocation)
             intent.putExtra("yLocation", yLocation)
