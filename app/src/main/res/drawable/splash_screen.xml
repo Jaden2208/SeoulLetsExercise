@@ -7,4 +7,5 @@
             android:gravity="fill"
             android:src="@drawable/splash"/>
     </item>
+
 </layer-list>

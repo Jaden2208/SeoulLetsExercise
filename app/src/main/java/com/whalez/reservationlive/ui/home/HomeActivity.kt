@@ -50,7 +50,8 @@ class HomeActivity : AppCompatActivity() {
             val appInfoLayout = findViewById<LinearLayout>(R.id.app_info_layout)
             val packageInfo = packageManager.getPackageInfo(packageName, 0)
 
-            appInfoLayout.tv_app_version.text = "${appVersionCode(packageInfo)}.${appVersionName(packageInfo)}"
+            appInfoLayout.tv_app_version.text =
+                "${appVersionCode(packageInfo)}.${appVersionName(packageInfo)}"
             appInfoLayout.tv_min_sdk_version.text = "Android api ${minSdkVersion()} 이상"
             showBottomSheet(appInfoLayout)
         }
@@ -62,10 +63,10 @@ class HomeActivity : AppCompatActivity() {
 
     }
 
-    private fun showBottomSheet(layout: LinearLayout){
+    private fun showBottomSheet(layout: LinearLayout) {
 
         val sheetBehavior = BottomSheetBehavior.from(layout)
-        if(sheetBehavior.state != BottomSheetBehavior.STATE_EXPANDED){
+        if (sheetBehavior.state != BottomSheetBehavior.STATE_EXPANDED) {
             sheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
         } else {
             sheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
@@ -183,10 +184,7 @@ class HomeActivity : AppCompatActivity() {
         builder.withNativeAdOptions(adOptions)
         val adLoader = builder.withAdListener(object : AdListener() {
             override fun onAdFailedToLoad(errorCode: Int) {
-                Toast.makeText(
-                    this@HomeActivity, "Failed to load native ad: "
-                            + errorCode, Toast.LENGTH_SHORT
-                ).show()
+                Log.e("onAdFailedToLoad", "Failed to load native ad: $errorCode")
             }
         }).build()
         adLoader.loadAd(AdRequest.Builder().build())
@@ -209,7 +207,7 @@ class HomeActivity : AppCompatActivity() {
         return packageInfo.versionName
     }
 
-    private fun minSdkVersion(): Int{
+    private fun minSdkVersion(): Int {
         return BuildConfig.MIN_SDK_VERSION
     }
 //

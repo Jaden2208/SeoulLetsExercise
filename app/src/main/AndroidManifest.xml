@@ -13,7 +13,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.home.LicensesActivity"></activity>
 
         <meta-data
             android:name="com.kakao.sdk.AppKey"
@@ -22,11 +21,7 @@
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="@string/admob_app_id" />
 
-        <activity android:name=".ui.single_service_details.ViewMapActivity" />
-        <activity android:name=".ui.service_list.filtered_services.FilteredServiceActivity" />
-        <activity android:name=".ui.home.HomeActivity" />
-        <activity
-            android:name=".ui.home.SplashActivity"
+        <activity android:name=".ui.home.SplashActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,8 +29,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.home.HomeActivity" />
+        <activity android:name=".ui.home.LicensesActivity" />
         <activity android:name=".ui.single_service_details.SingleServiceActivity" />
         <activity android:name=".ui.service_list.ServiceListActivity" />
+        <activity android:name=".ui.single_service_details.ViewMapActivity" />
+        <activity android:name=".ui.service_list.filtered_services.FilteredServiceActivity" />
     </application>
 
 </manifest>

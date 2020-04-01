@@ -44,7 +44,6 @@ dependencies {
     // ViewModel and LiveData
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
 
-
     // Recyclerview and CardView
     implementation 'com.google.android.material:material:1.1.0'
 
@@ -72,7 +71,4 @@ dependencies {
 
     // Google Admob
     implementation 'com.google.android.gms:play-services-ads:19.0.1'
-
-    // Lottie Animation Library
-    implementation 'com.airbnb.android:lottie:3.4.0'
 }

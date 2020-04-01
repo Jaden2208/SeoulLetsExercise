@@ -5,15 +5,17 @@ import android.location.Geocoder
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.ContextThemeWrapper
 import android.view.View
+import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
 import com.whalez.reservationlive.R
 import com.whalez.reservationlive.util.Utils.Companion.NO_LOCATION_X
 import com.whalez.reservationlive.util.Utils.Companion.NO_LOCATION_Y
+import com.whalez.reservationlive.util.basicAlertDialog
 import kotlinx.android.synthetic.main.activity_view_map.*
 import net.daum.mf.map.api.MapPOIItem
 import net.daum.mf.map.api.MapPoint
-import net.daum.mf.map.api.MapReverseGeoCoder
 import net.daum.mf.map.api.MapView
 import java.lang.Exception
 
@@ -30,7 +32,7 @@ class ViewMapActivity : AppCompatActivity() {
 
         val address = intent.getStringExtra("address")
         var xLocation = intent.getDoubleExtra("xLocation", NO_LOCATION_X)
-        var yLocation= intent.getDoubleExtra("yLocation", NO_LOCATION_Y)
+        var yLocation = intent.getDoubleExtra("yLocation", NO_LOCATION_Y)
         val serviceName = intent.getStringExtra("serviceName")
 
         if ((xLocation == NO_LOCATION_X || yLocation == NO_LOCATION_Y) && !address.isNullOrEmpty()) {
@@ -44,6 +46,10 @@ class ViewMapActivity : AppCompatActivity() {
                 xLocation = place[0].latitude
                 yLocation = place[0].longitude
             }
+            basicAlertDialog(this,
+                title = "주의",
+                message = "정확한 좌표 정보가 존재하지 않아 위치가 정확하지 않을 수 있습니다."
+            )
         }
 
         Log.d("kkkX", xLocation.toString())
