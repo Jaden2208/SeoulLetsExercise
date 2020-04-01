@@ -22,4 +22,6 @@
     <color name="jockguBtn">#9C880E</color>
     <color name="allCodeBtn">#AE1932</color>
 
+    <color name="linkColor">#0000FF</color>
+
 </resources>

@@ -6,4 +6,7 @@
     <dimen name="home_icon_size">70dp</dimen>
     <dimen name="app_info_content_text_size">13sp</dimen>
 
+    <dimen name="oss_title_size">13sp</dimen>
+    <dimen name="oss_content_size">12sp</dimen>
+
 </resources>

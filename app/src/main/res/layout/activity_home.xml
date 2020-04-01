@@ -433,8 +433,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:fontFamily="@font/font_jalnan"
                     android:layout_margin="15dp"
+                    android:fontFamily="@font/font_mapodpp"
                     android:text="모든 종목"
                     android:textColor="@android:color/white"
                     android:textSize="20dp" />

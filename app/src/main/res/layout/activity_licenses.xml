@@ -25,7 +25,7 @@
                 android:fontFamily="@font/font_jalnan"
                 android:gravity="center"
                 android:paddingVertical="20dp"
-                android:text="OSS Info"
+                android:text="오픈소스 라이선스 및 기타 저작권"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="18sp" />
 
@@ -33,10 +33,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginHorizontal="10dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginHorizontal="20dp"
                 android:text="@string/licenses_message"
-                android:textSize="14sp" />
+                android:textSize="@dimen/oss_content_size" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:autoLink="email"
+                android:text="jaden20.dev@gmail.com"
+                android:clickable="true"
+                android:textColorLink="@color/linkColor"
+                android:textSize="@dimen/oss_content_size" />
 
             <View
                 android:layout_width="match_parent"
@@ -47,240 +57,787 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="8dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="TITLE"
+                    android:text="Retrofit2"
                     android:textColor="@android:color/black"
-                    android:textStyle="bold"
-                    android:textSize="14sp"/>
+                    android:textSize="@dimen/oss_title_size"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="https://github.com/jaden2208"
-                    android:layout_marginTop="3dp"
                     android:layout_marginStart="18dp"
-                    android:textSize="13sp"/>
+                    android:layout_marginTop="3dp"
+                    android:autoLink="web"
+                    android:clickable="true"
+                    android:textColorLink="@color/linkColor"
+                    android:text="https://square.github.io/retrofit/"
+                    android:textSize="@dimen/oss_content_size" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Copyright"
-                    android:layout_marginTop="3dp"
                     android:layout_marginStart="18dp"
-                    android:textSize="13sp"/>
+                    android:text="Copyright 2013 Square, Inc."
+                    android:textSize="@dimen/oss_content_size" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="License"
-                    android:layout_marginTop="3dp"
                     android:layout_marginStart="18dp"
-                    android:textSize="13sp"/>
+                    android:text="Apache License 2.0"
+                    android:textSize="@dimen/oss_content_size" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="8dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="TITLE"
+                    android:text="Glide"
                     android:textColor="@android:color/black"
-                    android:textStyle="bold"
-                    android:textSize="14sp"/>
+                    android:textSize="@dimen/oss_title_size"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="https://github.com/jaden2208"
-                    android:layout_marginTop="3dp"
                     android:layout_marginStart="18dp"
-                    android:textSize="13sp"/>
+                    android:layout_marginTop="3dp"
+                    android:autoLink="web"
+                    android:text="https://github.com/bumptech/glide"
+                    android:clickable="true"
+                    android:textColorLink="@color/linkColor"
+                    android:textSize="@dimen/oss_content_size" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Copyright"
-                    android:layout_marginTop="3dp"
                     android:layout_marginStart="18dp"
-                    android:textSize="13sp"/>
+                    android:text="Copyright 2014 Google, Inc."
+                    android:textSize="@dimen/oss_content_size" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="License"
-                    android:layout_marginTop="3dp"
                     android:layout_marginStart="18dp"
-                    android:textSize="13sp"/>
+                    android:text="BSD, part MIT and Apache 2.0."
+                    android:textSize="@dimen/oss_content_size" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="8dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="TITLE"
+                    android:text="RxJava2"
                     android:textColor="@android:color/black"
-                    android:textStyle="bold"
-                    android:textSize="14sp"/>
+                    android:textSize="@dimen/oss_title_size"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="https://github.com/jaden2208"
-                    android:layout_marginTop="3dp"
                     android:layout_marginStart="18dp"
-                    android:textSize="13sp"/>
+                    android:layout_marginTop="3dp"
+                    android:autoLink="web"
+                    android:clickable="true"
+                    android:textColorLink="@color/linkColor"
+                    android:text="https://github.com/ReactiveX/RxJava/tree/2.x"
+                    android:textSize="@dimen/oss_content_size" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Copyright"
-                    android:layout_marginTop="3dp"
                     android:layout_marginStart="18dp"
-                    android:textSize="13sp"/>
+                    android:text="Copyright (c) 2016-present, RxJava Contributors."
+                    android:textSize="@dimen/oss_content_size" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="License"
-                    android:layout_marginTop="3dp"
                     android:layout_marginStart="18dp"
-                    android:textSize="13sp"/>
+                    android:text="Apache License 2.0"
+                    android:textSize="@dimen/oss_content_size" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="8dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="TITLE"
+                    android:text="KakoMap"
                     android:textColor="@android:color/black"
-                    android:textStyle="bold"
-                    android:textSize="14sp"/>
+                    android:textSize="@dimen/oss_title_size"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="https://github.com/jaden2208"
-                    android:layout_marginTop="3dp"
                     android:layout_marginStart="18dp"
-                    android:textSize="13sp"/>
+                    android:layout_marginTop="3dp"
+                    android:autoLink="web"
+                    android:clickable="true"
+                    android:textColorLink="@color/linkColor"
+                    android:text="http://apis.map.kakao.com/android/documentation/"
+                    android:textSize="@dimen/oss_content_size" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Copyright"
-                    android:layout_marginTop="3dp"
                     android:layout_marginStart="18dp"
-                    android:textSize="13sp"/>
+                    android:text="Copyright Kako Corp"
+                    android:textSize="@dimen/oss_content_size" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="License"
-                    android:layout_marginTop="3dp"
                     android:layout_marginStart="18dp"
-                    android:textSize="13sp"/>
+                    android:text="Apache License 2.0"
+                    android:textSize="@dimen/oss_content_size" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/colorPrimary" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:text="Fonts"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TmonMonsori Font"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/oss_title_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="3dp"
+                    android:autoLink="web"
+                    android:text="https://brunch.co.kr/@creative/32"
+                    android:clickable="true"
+                    android:textColorLink="@color/linkColor"
+                    android:textSize="@dimen/oss_content_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:text="Copyright (c) 2016, TICKETMONSTER, Inc."
+                    android:textSize="@dimen/oss_content_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:text="SIL Open Font License 1.1."
+                    android:textSize="@dimen/oss_content_size" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="8dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="TITLE"
+                    android:text="나눔고딕"
                     android:textColor="@android:color/black"
-                    android:textStyle="bold"
-                    android:textSize="14sp"/>
+                    android:textSize="@dimen/oss_title_size"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="https://github.com/jaden2208"
-                    android:layout_marginTop="3dp"
                     android:layout_marginStart="18dp"
-                    android:textSize="13sp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Copyright"
                     android:layout_marginTop="3dp"
-                    android:layout_marginStart="18dp"
-                    android:textSize="13sp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="License"
-                    android:layout_marginTop="3dp"
-                    android:layout_marginStart="18dp"
-                    android:textSize="13sp"/>
+                    android:text="이 앱에는 네이버에서 제공한 나눔글꼴이 적용되어 있습니다. "
+                    android:textSize="@dimen/oss_content_size" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="8dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="TITLE"
+                    android:text="여기어때 잘난체"
                     android:textColor="@android:color/black"
-                    android:textStyle="bold"
-                    android:textSize="14sp"/>
+                    android:textSize="@dimen/oss_title_size"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="https://github.com/jaden2208"
-                    android:layout_marginTop="3dp"
                     android:layout_marginStart="18dp"
-                    android:textSize="13sp"/>
+                    android:layout_marginTop="3dp"
+                    android:autoLink="web"
+                    android:clickable="true"
+                    android:textColorLink="@color/linkColor"
+                    android:text="https://image.goodchoice.kr/images/jalnan_font/jalnan-font-190124ver.pdf"
+                    android:textSize="@dimen/oss_content_size" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Copyright"
-                    android:layout_marginTop="3dp"
                     android:layout_marginStart="18dp"
-                    android:textSize="13sp"/>
+                    android:text="이 앱에는 (주)위드이노베이션이 제공한 여기어때 잘난체가 적용되어 있습니다."
+                    android:textSize="@dimen/oss_content_size" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="License"
-                    android:layout_marginTop="3dp"
+                    android:text="Mapo당인리발전소"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/oss_title_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="18dp"
-                    android:textSize="13sp"/>
+                    android:layout_marginTop="3dp"
+                    android:autoLink="web"
+                    android:clickable="true"
+                    android:textColorLink="@color/linkColor"
+                    android:text="https://www.mapo.go.kr/site/main/content/mapo04010201"
+                    android:textSize="@dimen/oss_content_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:text="이 앱에는 마포구에서 제공한 마포 브랜드 서체가 적용되어 있습니다."
+                    android:textSize="@dimen/oss_content_size" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/colorPrimary" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:text="Images"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="mavdee icons"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/oss_title_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="3dp"
+                    android:clickable="true"
+                    android:textColorLink="@color/linkColor"
+                    android:autoLink="web"
+                    android:text="www.flaticon.com"
+                    android:textSize="@dimen/oss_content_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:text="Icon made by mavadee from www.flaticon.com"
+                    android:textSize="@dimen/oss_content_size" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Freepik icons"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/oss_title_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="3dp"
+                    android:clickable="true"
+                    android:textColorLink="@color/linkColor"
+                    android:autoLink="web"
+                    android:text="www.flaticon.com"
+                    android:textSize="@dimen/oss_content_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:text="Icon made by Freepik from www.flaticon.com"
+                    android:textSize="@dimen/oss_content_size" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Good Ware icons"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/oss_title_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:clickable="true"
+                    android:textColorLink="@color/linkColor"
+                    android:layout_marginTop="3dp"
+                    android:autoLink="web"
+                    android:text="www.flaticon.com"
+                    android:textSize="@dimen/oss_content_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:text="Icon made by Good Ware from www.flaticon.com"
+                    android:textSize="@dimen/oss_content_size" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Smashicons icons"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/oss_title_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:clickable="true"
+                    android:textColorLink="@color/linkColor"
+                    android:layout_marginTop="3dp"
+                    android:autoLink="web"
+                    android:text="www.flaticon.com"
+                    android:textSize="@dimen/oss_content_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:text="Icon made by Smashicons from www.flaticon.com"
+                    android:textSize="@dimen/oss_content_size" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Those Icons icons"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/oss_title_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="3dp"
+                    android:clickable="true"
+                    android:textColorLink="@color/linkColor"
+                    android:autoLink="web"
+                    android:text="www.flaticon.com"
+                    android:textSize="@dimen/oss_content_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:text="Icon made by Those Icons from www.flaticon.com"
+                    android:textSize="@dimen/oss_content_size" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Roundicons icons"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/oss_title_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="3dp"
+                    android:clickable="true"
+                    android:textColorLink="@color/linkColor"
+                    android:autoLink="web"
+                    android:text="www.flaticon.com"
+                    android:textSize="@dimen/oss_content_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:text="Icon made by Roundicons from www.flaticon.com"
+                    android:textSize="@dimen/oss_content_size" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="soccer_logo"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/oss_title_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="3dp"
+                    android:text="Photo by Jeffrey F Lin on Unsplash"
+                    android:textSize="@dimen/oss_content_size" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="futsal_logo"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/oss_title_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="3dp"
+                    android:text="Photo by Muhsin Ahmad on Unsplash"
+                    android:textSize="@dimen/oss_content_size" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="baseball_logo"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/oss_title_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="3dp"
+                    android:text="Photo by Daiji Umemoto on Unsplash"
+                    android:textSize="@dimen/oss_content_size" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="basketball_logo"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/oss_title_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="3dp"
+                    android:text="Photo by Serge Kutuzov on Unsplash"
+                    android:textSize="@dimen/oss_content_size" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="tennis_logo"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/oss_title_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="3dp"
+                    android:text="Photo by Julian Schiemann on Unsplash"
+                    android:textSize="@dimen/oss_content_size" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="badminton_logo"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/oss_title_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="3dp"
+                    android:text="Photo by Vladislav Vasnetsov on Pexels"
+                    android:textSize="@dimen/oss_content_size" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="volleyball_logo"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/oss_title_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="3dp"
+                    android:text="Photo by Vince Fleming on Unsplash"
+                    android:textSize="@dimen/oss_content_size" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="multipurpose_logo"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/oss_title_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="3dp"
+                    android:text="Photo by Kenny Orr on Unsplash"
+                    android:textSize="@dimen/oss_content_size" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="jokgu_logo"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/oss_title_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:clickable="true"
+                    android:textColorLink="@color/linkColor"
+                    android:layout_marginTop="3dp"
+                    android:text="https://commons.wikimedia.org/w/index.php?curid=36584237"
+                    android:autoLink="web"
+                    android:textSize="@dimen/oss_content_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:text="By 최광모 - 자작"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:text="CC BY-SA 4.0"
+                    android:textSize="@dimen/oss_content_size" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="multipurpose_logo"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/oss_title_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="3dp"
+                    android:text="Photo by Kenny Orr on Unsplash"
+                    android:textSize="@dimen/oss_content_size" />
 
             </LinearLayout>
 
