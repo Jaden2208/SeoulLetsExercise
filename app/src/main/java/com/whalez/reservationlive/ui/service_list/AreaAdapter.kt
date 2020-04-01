@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.whalez.reservationlive.R
-import com.whalez.reservationlive.ui.service_list.filtered_services.FilteredServiceActivity
+import com.whalez.reservationlive.ui.service_list.filtered_services.AreaFilteredActivity
 import com.whalez.reservationlive.util.isDoubleClicked
 import kotlinx.android.synthetic.main.area_item.view.*
 
@@ -37,7 +37,7 @@ class AreaAdapter(private val context: Context, private val codeName: String): R
 
                 if(isDoubleClicked()) return@setOnClickListener
 
-                val intent = Intent(context, FilteredServiceActivity::class.java)
+                val intent = Intent(context, AreaFilteredActivity::class.java)
                 intent.putExtra("areaName", areaName)
                 intent.putExtra("codeName", codeName)
                 context.startActivity(intent)

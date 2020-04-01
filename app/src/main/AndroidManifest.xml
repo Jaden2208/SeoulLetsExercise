@@ -34,7 +34,7 @@
         <activity android:name=".ui.single_service_details.SingleServiceActivity" />
         <activity android:name=".ui.service_list.ServiceListActivity" />
         <activity android:name=".ui.single_service_details.ViewMapActivity" />
-        <activity android:name=".ui.service_list.filtered_services.FilteredServiceActivity" />
+        <activity android:name=".ui.service_list.filtered_services.AreaFilteredActivity" />
     </application>
 
 </manifest>

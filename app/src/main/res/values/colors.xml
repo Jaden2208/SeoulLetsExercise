@@ -6,14 +6,10 @@
     <color name="colorBackground">#e4e7ec</color>
 
     <color name="imageFilter">#50000000</color>
-    <color name="topBarFilter">#1DFFFFFF</color>
 
     <color name="reservationPaused">#FF7725</color>
     <color name="reservationFinished">#FF0000</color>
     <color name="reservationAvailable">#00C100</color>
-
-    <color name="colorSeoul">#AE1932</color>
-    <color name="pantone2020">#0f4c81</color>
 
     <color name="soccerBtn">#333333</color>
     <color name="futsalBtn">#00A16E</color>

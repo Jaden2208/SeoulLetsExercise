@@ -14,15 +14,12 @@ import com.bumptech.glide.signature.ObjectKey
 import com.whalez.reservationlive.R
 import com.whalez.reservationlive.data.vo.service_list.Service
 import com.whalez.reservationlive.ui.single_service_details.SingleServiceActivity
-import com.whalez.reservationlive.util.Utils
-import com.whalez.reservationlive.util.Utils.Companion.CLICK_TIME_INTERVAL
 import com.whalez.reservationlive.util.isDoubleClicked
-import com.whalez.reservationlive.util.mLastClickTime
 import kotlinx.android.synthetic.main.service_list_item.view.*
 import java.util.*
 
-class FilteredAdapter(private val serviceList: List<Service>, val context: Context, val areaName: String) :
-    RecyclerView.Adapter<FilteredAdapter.FilteredViewHolder>() {
+class AreaFilteredAdapter(private val serviceList: List<Service>, val context: Context, val areaName: String) :
+    RecyclerView.Adapter<AreaFilteredAdapter.FilteredViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FilteredViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.service_list_item, parent, false)

@@ -4,7 +4,6 @@
 
     <string name="ad_attribution">Ad</string>
     <string name="admob_app_id">ca-app-pub-3018214054862698~7449320155</string>
-    <string name="ad_unit_id">ca-app-pub-3018214054862698/9688664204</string>
     <string name="ad_unit_id_for_test">ca-app-pub-3940256099942544/2247696110</string>
 
     <string name="licenses_message">

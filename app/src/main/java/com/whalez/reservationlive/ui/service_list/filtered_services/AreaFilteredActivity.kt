@@ -17,7 +17,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class FilteredServiceActivity : AppCompatActivity() {
+class AreaFilteredActivity : AppCompatActivity() {
 
     companion object {
         const val NO_NEED_CODE_IMG = -999
@@ -74,7 +74,7 @@ class FilteredServiceActivity : AppCompatActivity() {
     }
 
     private fun setAdapter(services: List<Service>) {
-        val mAdapter = FilteredAdapter(services, this, areaName)
+        val mAdapter = AreaFilteredAdapter(services, this, areaName)
         rv_service_list.adapter = mAdapter
         rv_service_list.layoutManager = LinearLayoutManager(this)
         rv_service_list.setHasFixedSize(false)
@@ -87,37 +87,41 @@ class FilteredServiceActivity : AppCompatActivity() {
         val codeIcon: Int
         val codeImage: Int
         when(codeName){
-            "축구장" -> {
+            "축구" -> {
                 codeIcon = R.drawable.ic_football_white
                 codeImage = R.drawable.soccer_logo
             }
-            "풋살장" -> {
+            "풋살" -> {
                 codeIcon = R.drawable.ic_futsal_white
                 codeImage = R.drawable.futsal_logo
             }
-            "야구장" -> {
+            "야구" -> {
                 codeIcon = R.drawable.ic_baseball_white
                 codeImage = R.drawable.baseball_logo
             }
-            "농구장" -> {
+            "농구" -> {
                 codeIcon = R.drawable.ic_basketball_white
                 codeImage = R.drawable.basketball_logo
             }
-            "테니스장" -> {
+            "테니스" -> {
                 codeIcon = R.drawable.ic_tennis_white
                 codeImage = R.drawable.tennis_logo
             }
-            "배드민턴장" -> {
+            "배드민턴" -> {
                 codeIcon = R.drawable.ic_badminton_white
                 codeImage = R.drawable.badminton_logo
             }
-            "배구장" -> {
+            "배구" -> {
                 codeIcon = R.drawable.ic_volleyball_white
                 codeImage = R.drawable.volleyball_logo
             }
-            "다목적경기장" -> {
+            "다목적경기" -> {
                 codeIcon = R.drawable.ic_multipurpose_white
                 codeImage = R.drawable.multipurpose_logo
+            }
+            "족구" -> {
+                codeIcon = R.drawable.ic_jokgu_white
+                codeImage = R.drawable.jokgu_logo
             }
             "전체" -> {
                 codeName = ""
