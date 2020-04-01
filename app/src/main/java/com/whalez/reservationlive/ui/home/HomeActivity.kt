@@ -36,7 +36,8 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        showAd()
+//        광고 비활성화
+//        showAd()
     }
 
     @SuppressLint("SetTextI18n")
