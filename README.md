@@ -1,8 +1,20 @@
-# 서울 운동하자
+# Seoul, Let's Exercise! 서울 운동하자
 서울시 공공체육시설 정보 제공 안드로이드 어플리케이션
 
-### Download
+### Download App on Google Play
 출시 예정
+
+### Screenshots
+<div>
+  <img width="200" src="./images/demo/splash.jpg">
+  <img width="200" src="./images/demo/home.jpg">
+  <img width="200" src="./images/demo/service_list_soccer.jpg">
+  <img width="200" src="./images/demo/service_list_soccer_guro.jpg">
+  <img width="200" src="./images/demo/service_list_volleyball.jpg">
+  <img width="200" src="./images/demo/service_list_tennis.jpg">
+  <img width="200" src="./images/demo/single_service.jpg">
+  <img width="200" src="./images/demo/service_map.jpg">
+</div>
 
 ### 사용된 기술 스택
  - Kotlin
