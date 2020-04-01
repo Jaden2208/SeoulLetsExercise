@@ -77,14 +77,15 @@ class HomeActivity : AppCompatActivity() {
         if (isDoubleClicked()) return
 
         val codeName = when (view.id) {
-            R.id.football -> "축구장"
-            R.id.futsal -> "풋살장"
-            R.id.baseball -> "야구장"
-            R.id.basketball -> "농구장"
-            R.id.tennis -> "테니스장"
-            R.id.badminton -> "배드민턴장"
-            R.id.volleyball -> "배구장"
+            R.id.football -> "축구"
+            R.id.futsal -> "풋살"
+            R.id.baseball -> "야구"
+            R.id.basketball -> "농구"
+            R.id.tennis -> "테니스"
+            R.id.badminton -> "배드민턴"
+            R.id.volleyball -> "배구"
             R.id.multipurpose -> "다목적경기장"
+            R.id.jokgu -> "족구"
             R.id.allcodes -> "전체"
             else -> return
         }
@@ -210,9 +211,5 @@ class HomeActivity : AppCompatActivity() {
     private fun minSdkVersion(): Int {
         return BuildConfig.MIN_SDK_VERSION
     }
-//
-//    private fun setLeft(text: String): String{
-//        return "<div style=\"float:left;\">$text</div>"
-//    }
 
 }

@@ -88,7 +88,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/font_mapodpp"
-                        android:text="축구장"
+                        android:text="축구"
                         android:textColor="@android:color/black"
                         android:textSize="15sp" />
 
@@ -126,7 +126,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/font_mapodpp"
-                        android:text="풋살장"
+                        android:text="풋살"
                         android:textColor="@android:color/black"
                         android:textSize="15sp" />
 
@@ -164,7 +164,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/font_mapodpp"
-                        android:text="야구장"
+                        android:text="야구"
                         android:textColor="@android:color/black"
                         android:textSize="15sp" />
 
@@ -210,7 +210,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/font_nanum_gothic"
-                        android:text="농구장"
+                        android:text="농구"
                         android:textColor="@android:color/black"
                         android:textSize="15sp"
                         android:textStyle="bold" />
@@ -249,7 +249,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/font_nanum_gothic"
-                        android:text="테니스장"
+                        android:text="테니스"
                         android:textColor="@android:color/black"
                         android:textSize="15sp"
                         android:textStyle="bold" />
@@ -288,7 +288,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/font_nanum_gothic"
-                        android:text="배드민턴장"
+                        android:text="배드민턴"
                         android:textColor="@android:color/black"
                         android:textSize="15sp"
                         android:textStyle="bold" />
@@ -335,7 +335,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/font_mapodpp"
-                        android:text="배구장"
+                        android:text="배구"
                         android:textColor="@android:color/black"
                         android:textSize="15sp" />
 
@@ -387,24 +387,21 @@
                     android:orientation="vertical">
 
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/allcodes"
+                        android:id="@+id/jokgu"
                         android:layout_width="@dimen/home_icon_size"
                         android:layout_height="@dimen/home_icon_size"
                         android:clickable="true"
                         android:focusable="true"
                         android:foreground="?selectableItemBackground"
                         android:onClick="onClickCode"
-                        app:cardBackgroundColor="@color/allCodeBtn"
+                        app:cardBackgroundColor="@color/jockguBtn"
                         app:cardCornerRadius="5dp">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
                             android:layout_gravity="center"
-                            android:fontFamily="@font/font_jalnan"
-                            android:text="서울"
-                            android:textColor="@android:color/white"
-                            android:textSize="20dp" />
+                            android:src="@drawable/ic_jokgu_white" />
 
                     </androidx.cardview.widget.CardView>
 
@@ -413,13 +410,38 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/font_mapodpp"
-                        android:text="전체"
+                        android:text="족구"
                         android:textColor="@android:color/black"
                         android:textSize="15sp" />
 
                 </LinearLayout>
 
             </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/allcodes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?selectableItemBackground"
+                android:onClick="onClickCode"
+                app:cardBackgroundColor="@color/allCodeBtn"
+                app:cardCornerRadius="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/font_jalnan"
+                    android:layout_margin="15dp"
+                    android:text="모든 종목"
+                    android:textColor="@android:color/white"
+                    android:textSize="20dp" />
+
+            </androidx.cardview.widget.CardView>
 
             <FrameLayout
                 android:id="@+id/fl_adplaceholder"

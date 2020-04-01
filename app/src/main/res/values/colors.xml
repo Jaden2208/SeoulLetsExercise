@@ -23,6 +23,7 @@
     <color name="badmintonBtn">#D6D600</color>
     <color name="volleyballBtn">#9DDFE1</color>
     <color name="multipurposeBtn">#5F5FFF</color>
+    <color name="jockguBtn">#9C880E</color>
     <color name="allCodeBtn">#AE1932</color>
 
 </resources>
