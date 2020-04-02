@@ -29,15 +29,14 @@ import kotlinx.android.synthetic.main.bottom_app_info.view.*
 class HomeActivity : AppCompatActivity() {
 
     companion object {
-        const val ADMOB_AD_UNIT_ID = R.string.ad_unit_id_for_test
+        const val ADMOB_AD_UNIT_ID = R.string.ad_unit_id
     }
 
     private var nativeAd: UnifiedNativeAd? = null
 
     override fun onResume() {
         super.onResume()
-//        광고 비활성화
-//        showAd()
+        showAd()
     }
 
     @SuppressLint("SetTextI18n")
