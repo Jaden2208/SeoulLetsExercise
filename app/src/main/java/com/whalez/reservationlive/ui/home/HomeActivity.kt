@@ -34,15 +34,13 @@ class HomeActivity : AppCompatActivity() {
 
     private var nativeAd: UnifiedNativeAd? = null
 
-    override fun onResume() {
-        super.onResume()
-        showAd()
-    }
-
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+
+        // Activate Ads
+        showAd()
 
         MobileAds.initialize(this) { }
 
