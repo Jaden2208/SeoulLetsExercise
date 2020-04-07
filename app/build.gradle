@@ -10,7 +10,7 @@ android {
         applicationId "com.whalez.reservationlive"
         minSdkVersion 23
         targetSdkVersion 29
-        versionCode 1
+        versionCode 5
         versionName "1.0"
         buildConfigField "int", "MIN_SDK_VERSION", "$minSdkVersion.apiLevel"
 

@@ -2,7 +2,9 @@
 서울시 공공체육시설 정보 제공 안드로이드 어플리케이션
 
 ### Download App on Google Play
-출시 예정
+[Google Play](https://play.google.com/store/apps/details?id=com.whalez.reservationlive)
+
+카카오 맵 연동이 되지 않는 오류가 있습니다.
 
 ### Screenshots
 <div>
