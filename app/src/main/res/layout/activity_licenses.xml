@@ -186,7 +186,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="KakoMap"
+                    android:text="KakaoMap"
                     android:textColor="@android:color/black"
                     android:textSize="@dimen/oss_title_size"
                     android:textStyle="bold" />
