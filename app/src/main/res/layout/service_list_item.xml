@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/card_view"
+    android:id="@+id/cardView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="4dp"
@@ -16,7 +16,7 @@
         android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/cv_iv_service_image"
+            android:id="@+id/cvIvServiceImage"
             android:layout_width="match_parent"
             android:layout_height="220dp"
             android:layout_gravity="center"
@@ -25,7 +25,7 @@
             android:src="@drawable/placeholder" />
 
         <TextView
-            android:id="@+id/cv_tv_service_name"
+            android:id="@+id/cvTvServiceName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
@@ -44,7 +44,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/cv_tv_area_name"
+                android:id="@+id/cvTvAreaName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
@@ -52,7 +52,7 @@
                 android:textSize="13sp" />
 
             <TextView
-                android:id="@+id/cv_tv_place_name"
+                android:id="@+id/cvTvPlaceName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
@@ -64,7 +64,7 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/cv_tv_service_status"
+            android:id="@+id/cvTvServiceStatus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"

@@ -12,7 +12,7 @@ import com.whalez.reservationlive.data.api.ServiceDBClient
 import com.whalez.reservationlive.data.api.ServiceDBInterface
 import com.whalez.reservationlive.data.vo.service_list.Service
 import com.whalez.reservationlive.data.vo.service_list.ServiceResponse
-import kotlinx.android.synthetic.main.activity_filtered_service.*
+import com.whalez.reservationlive.databinding.ActivityFilteredServiceBinding
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -27,23 +27,26 @@ class AreaFilteredActivity : AppCompatActivity() {
     lateinit var codeName: String
     lateinit var areaName: String
 
+    private lateinit var binding: ActivityFilteredServiceBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_filtered_service)
+        binding = ActivityFilteredServiceBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        progress_bar.visibility = View.VISIBLE
+        binding.progressBar.visibility = View.VISIBLE
 
         codeName = intent.getStringExtra("codeName")!!
         areaName = intent.getStringExtra("areaName")!!
         setCodeAndArea(areaName)
 
-        btn_back.setOnClickListener { finish() }
+        binding.btnBack.setOnClickListener { finish() }
 
         val apiService: ServiceDBInterface = ServiceDBClient.getClient()
         apiService.getFilteredServices(codeName).enqueue(object : Callback<ServiceResponse> {
             override fun onFailure(call: Call<ServiceResponse>, t: Throwable) {
-                progress_bar.visibility = View.GONE
-                tv_error.visibility = View.VISIBLE
+                binding.progressBar.visibility = View.GONE
+                binding.tvError.visibility = View.VISIBLE
             }
 
             override fun onResponse(
@@ -59,9 +62,9 @@ class AreaFilteredActivity : AppCompatActivity() {
                                 filteredServices.add(service)
                             }
                         }
-                        if (filteredServices.isEmpty()) tv_no_data_msg.visibility = View.VISIBLE
+                        if (filteredServices.isEmpty()) binding.tvNoDataMsg.visibility = View.VISIBLE
                         else setAdapter(filteredServices)
-                        progress_bar.visibility = View.GONE
+                        binding.progressBar.visibility = View.GONE
                     }
                 } else {
                     Log.d("kkkResponseCode", response.code().toString())
@@ -75,15 +78,15 @@ class AreaFilteredActivity : AppCompatActivity() {
 
     private fun setAdapter(services: List<Service>) {
         val mAdapter = AreaFilteredAdapter(services, this, areaName)
-        rv_service_list.adapter = mAdapter
-        rv_service_list.layoutManager = LinearLayoutManager(this)
-        rv_service_list.setHasFixedSize(false)
+        binding.rvServiceList.adapter = mAdapter
+        binding.rvServiceList.layoutManager = LinearLayoutManager(this)
+        binding.rvServiceList.setHasFixedSize(false)
     }
 
     @SuppressLint("SetTextI18n")
     private fun setCodeAndArea(areaName: String) {
-        tv_code_name.text = " $codeName"
-        tv_areaName.text = areaName
+        binding.tvCodeName.text = " $codeName"
+        binding.tvAreaName.text = areaName
         val codeIcon: Int
         val codeImage: Int
         when(codeName){
@@ -133,11 +136,11 @@ class AreaFilteredActivity : AppCompatActivity() {
                 codeImage = R.drawable.only_players
             }
         }
-        if(codeIcon != NO_NEED_CODE_IMG) tv_code_name.setCompoundDrawablesWithIntrinsicBounds(codeIcon, 0, 0, 0)
+        if(codeIcon != NO_NEED_CODE_IMG) binding.tvCodeName.setCompoundDrawablesWithIntrinsicBounds(codeIcon, 0, 0, 0)
         Glide.with(this.applicationContext)
             .load(codeImage)
             .placeholder(R.drawable.placeholder)
-            .into(iv_sport_img)
+            .into(binding.ivSportImg)
 
     }
 }

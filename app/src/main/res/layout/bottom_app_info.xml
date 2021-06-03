@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/app_info_layout"
+    android:id="@+id/appInfoLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
@@ -55,7 +55,7 @@
                 android:textSize="@dimen/app_info_content_text_size" />
 
             <TextView
-                android:id="@+id/tv_app_version"
+                android:id="@+id/tvAppVersion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0.0.0"
@@ -79,7 +79,7 @@
                 android:textSize="@dimen/app_info_content_text_size" />
 
             <TextView
-                android:id="@+id/tv_min_sdk_version"
+                android:id="@+id/tvMinSdkVersion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="api"

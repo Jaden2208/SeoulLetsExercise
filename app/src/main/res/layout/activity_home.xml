@@ -13,7 +13,7 @@
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
-            android:id="@+id/collapsing_toolbar_layout"
+            android:id="@+id/collapsingToolbarLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:contentScrim="@android:color/transparent"
@@ -78,7 +78,7 @@
                             android:layout_width="40dp"
                             android:layout_height="40dp"
                             android:layout_gravity="center"
-                            android:src="@drawable/ic_football_white"/>
+                            android:src="@drawable/ic_football_white" />
 
                     </androidx.cardview.widget.CardView>
 
@@ -441,14 +441,8 @@
 
             </androidx.cardview.widget.CardView>
 
-            <FrameLayout
-                android:id="@+id/fl_adplaceholder"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp" />
-
             <Button
-                android:id="@+id/btn_app_info"
+                android:id="@+id/btnAppInfo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
@@ -458,7 +452,7 @@
                 android:textSize="15sp" />
 
             <Button
-                android:id="@+id/btn_licenses"
+                android:id="@+id/btnLicenses"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -471,6 +465,8 @@
 
     </androidx.core.widget.NestedScrollView>
 
-    <include layout="@layout/bottom_app_info"/>
+    <include
+        android:id="@+id/bottomAppInfo"
+        layout="@layout/bottom_app_info" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

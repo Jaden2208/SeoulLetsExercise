@@ -5,15 +5,12 @@ import android.location.Geocoder
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.ContextThemeWrapper
 import android.view.View
-import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
-import com.whalez.reservationlive.R
+import com.whalez.reservationlive.databinding.ActivityViewMapBinding
 import com.whalez.reservationlive.util.Utils.Companion.NO_LOCATION_X
 import com.whalez.reservationlive.util.Utils.Companion.NO_LOCATION_Y
 import com.whalez.reservationlive.util.basicAlertDialog
-import kotlinx.android.synthetic.main.activity_view_map.*
 import net.daum.mf.map.api.MapPOIItem
 import net.daum.mf.map.api.MapPoint
 import net.daum.mf.map.api.MapView
@@ -21,14 +18,17 @@ import java.lang.Exception
 
 class ViewMapActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityViewMapBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_view_map)
+        binding = ActivityViewMapBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val permissions = arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION)
         ActivityCompat.requestPermissions(this, permissions, 0)
 
-        btn_back.setOnClickListener { finish() }
+        binding.btnBack.setOnClickListener { finish() }
 
         val address = intent.getStringExtra("address")
         var xLocation = intent.getDoubleExtra("xLocation", NO_LOCATION_X)
@@ -66,7 +66,7 @@ class ViewMapActivity : AppCompatActivity() {
 
     private fun setMapView(serviceName: String, xLocation: Double, yLocation: Double) {
         val mapView = MapView(this)
-        map_view.addView(mapView)
+        binding.mapView.addView(mapView)
         val marker = MapPOIItem()
         val servicePoint = MapPoint.mapPointWithGeoCoord(xLocation, yLocation)
 
@@ -84,7 +84,7 @@ class ViewMapActivity : AppCompatActivity() {
     }
 
     private fun setError() {
-        tv_error.visibility = View.VISIBLE
-        map_view.visibility = View.GONE
+        binding.tvError.visibility = View.VISIBLE
+        binding.mapView.visibility = View.GONE
     }
 }

@@ -7,7 +7,6 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Html
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.core.content.ContextCompat
@@ -24,10 +23,10 @@ import com.whalez.reservationlive.data.api.ServiceDBInterface
 import com.whalez.reservationlive.data.repository.NetworkState
 import com.whalez.reservationlive.data.repository.ServiceDetailsRepository
 import com.whalez.reservationlive.data.vo.service_detail.ServiceDetails
+import com.whalez.reservationlive.databinding.ActivitySingleServiceBinding
 import com.whalez.reservationlive.util.Utils.Companion.NO_LOCATION_X
 import com.whalez.reservationlive.util.Utils.Companion.NO_LOCATION_Y
 import com.whalez.reservationlive.util.isDoubleClicked
-import kotlinx.android.synthetic.main.activity_single_service.*
 import java.util.*
 
 class SingleServiceActivity : AppCompatActivity() {
@@ -42,26 +41,28 @@ class SingleServiceActivity : AppCompatActivity() {
     private var serviceId: String? = null
     private var serviceUrl: String? = null
 
+    private lateinit var binding: ActivitySingleServiceBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_single_service)
+        binding = ActivitySingleServiceBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        btn_back.setOnClickListener { finish() }
+        binding.btnBack.setOnClickListener { finish() }
 
-        btn_view_on_map.setOnClickListener {
+        binding.btnViewOnMap.setOnClickListener {
             if (isDoubleClicked()) return@setOnClickListener
             val intent = Intent(this, ViewMapActivity::class.java)
             intent.putExtra("xLocation", xLocation)
             intent.putExtra("yLocation", yLocation)
-            intent.putExtra("serviceName", tv_service_name.text)
+            intent.putExtra("serviceName", binding.tvServiceName.text)
             intent.putExtra("address", address)
             startActivity(intent)
         }
 
         serviceId = intent.getStringExtra("id")
         serviceUrl = intent.getStringExtra("serviceUrl")
-        if(serviceUrl!!.contains("yeyak.seoul")){
+        if (serviceUrl!!.contains("yeyak.seoul")) {
             serviceUrl = "http://yeyak.seoul.go.kr/mobile/detailView.web?rsvsvcid=$serviceId"
         }
 
@@ -75,14 +76,14 @@ class SingleServiceActivity : AppCompatActivity() {
         })
 
         viewModel.networkState.observe(this, Observer {
-            progress_bar.visibility = if (it == NetworkState.LOADING) View.VISIBLE else View.GONE
-            tv_error.visibility = if (it == NetworkState.ERROR) View.VISIBLE else View.GONE
+            binding.progressBar.visibility = if (it == NetworkState.LOADING) View.VISIBLE else View.GONE
+            binding.tvError.visibility = if (it == NetworkState.ERROR) View.VISIBLE else View.GONE
         })
 
     }
 
-    fun gotoWebsite(view: View){
-        if(serviceUrl == null){
+    fun gotoWebsite(view: View) {
+        if (serviceUrl == null) {
             Toast.makeText(this, "사이트 링크가 존재하지 않습니다.", Toast.LENGTH_SHORT).show()
             return
         }
@@ -92,10 +93,9 @@ class SingleServiceActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     fun bindUI(it: ServiceDetails) {
-        // null 이 뜨는 경우가 분명히 있음 지우면 안됨.
-        if(it.detailList == null) {
-            main_layout.visibility = View.GONE
-            no_data_layout.visibility = View.VISIBLE
+        if (it.detailList == null) {
+            binding.mainLayout.visibility = View.GONE
+            binding.noDataLayout.visibility = View.VISIBLE
             return
         }
 
@@ -111,40 +111,42 @@ class SingleServiceActivity : AppCompatActivity() {
             .load(serviceImgUrl)
             .thumbnail(Glide.with(this).load(serviceImgUrl).apply(RequestOptions().override(100)))
             .apply(requestOptions)
-            .into(iv_service_image)
-        tv_service_name.text = detail.serviceName
-        tv_area_name.text = detail.areaName
-        tv_place_name.text = detail.placeName
-        tv_code_name.text = detail.codeName
-        tv_address.text = detail.address
+            .into(binding.ivServiceImage)
+        with(binding) {
+            tvServiceName.text = detail.serviceName
+            tvAreaName.text = detail.areaName
+            tvPlaceName.text = detail.placeName
+            tvCodeName.text = detail.codeName
+            tvAddress.text = detail.address
 
-        val serviceStatus = detail.serviceStatus
-        tv_service_status.text = serviceStatus
-        val statusColor = when(serviceStatus){
-            "접수중" -> R.color.reservationAvailable
-            "예약일시중지" -> R.color.reservationPaused
-            "접수종료" -> R.color.reservationFinished
-            else -> R.color.colorAccent
-        }
-        tv_service_status.setTextColor(ContextCompat.getColor(applicationContext, statusColor))
+            val serviceStatus = detail.serviceStatus
+            tvServiceStatus.text = serviceStatus
+            val statusColor = when (serviceStatus) {
+                "접수중" -> R.color.reservationAvailable
+                "예약일시중지" -> R.color.reservationPaused
+                "접수종료" -> R.color.reservationFinished
+                else -> R.color.colorAccent
+            }
+            tvServiceStatus.setTextColor(ContextCompat.getColor(applicationContext, statusColor))
 
-        tv_pay_at.text = detail.payAt
-        tv_available_time.text = "${detail.serviceBegin} ~ ${detail.serviceEnd}"
-        tv_notice.text = detail.notice.htmlToString()
-        tv_detail_content.text = detail.detailContent.htmlToString()
+            tvPayAt.text = detail.payAt
+            tvAvailableTime.text = "${detail.serviceBegin} ~ ${detail.serviceEnd}"
+            tvNotice.text = detail.notice.htmlToString()
+            tvDetailContent.text = detail.detailContent.htmlToString()
 
-        if(detail.xLocation.isNotEmpty() && detail.yLocation.isNotEmpty()){
-            xLocation = detail.xLocation.toDouble()
-            yLocation = detail.yLocation.toDouble()
-        }
-        if(detail.address.isNotEmpty()){
-            address = detail.address
+            if (detail.xLocation.isNotEmpty() && detail.yLocation.isNotEmpty()) {
+                xLocation = detail.xLocation.toDouble()
+                yLocation = detail.yLocation.toDouble()
+            }
+            if (detail.address.isNotEmpty()) {
+                address = detail.address
+            }
         }
 
     }
 
-    private fun String.htmlToString() : String {
-        return if(Build.VERSION.SDK_INT >= 24)
+    private fun String.htmlToString(): String {
+        return if (Build.VERSION.SDK_INT >= 24)
             Html.fromHtml(this, Html.FROM_HTML_MODE_LEGACY).toString()
         else Html.fromHtml(this).toString()
     }

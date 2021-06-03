@@ -3,7 +3,6 @@ package com.whalez.reservationlive.ui.service_list.filtered_services
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
@@ -13,17 +12,17 @@ import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.signature.ObjectKey
 import com.whalez.reservationlive.R
 import com.whalez.reservationlive.data.vo.service_list.Service
+import com.whalez.reservationlive.databinding.ServiceListItemBinding
 import com.whalez.reservationlive.ui.single_service_details.SingleServiceActivity
 import com.whalez.reservationlive.util.isDoubleClicked
-import kotlinx.android.synthetic.main.service_list_item.view.*
 import java.util.*
 
 class AreaFilteredAdapter(private val serviceList: List<Service>, val context: Context, val areaName: String) :
     RecyclerView.Adapter<AreaFilteredAdapter.FilteredViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FilteredViewHolder {
-        val view = LayoutInflater.from(context).inflate(R.layout.service_list_item, parent, false)
-        return FilteredViewHolder(view)
+        val binding = ServiceListItemBinding.inflate(LayoutInflater.from(context), parent, false)
+        return FilteredViewHolder(binding)
     }
 
     override fun getItemCount(): Int = serviceList.count()
@@ -33,9 +32,7 @@ class AreaFilteredAdapter(private val serviceList: List<Service>, val context: C
 
     }
 
-    inner class FilteredViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-
-//        private var mLastClickTime = System.currentTimeMillis()
+    inner class FilteredViewHolder(private val binding: ServiceListItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(service: Service?, context: Context, position: Int) {
             if (service == null) return
@@ -46,26 +43,26 @@ class AreaFilteredAdapter(private val serviceList: List<Service>, val context: C
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .dontAnimate()
                 .signature(ObjectKey(Calendar.DAY_OF_MONTH))
-            Glide.with(itemView.context)
+            Glide.with(binding.cardView.context)
                 .load(serviceImgUrl)
                 .thumbnail(
                     Glide.with(context).load(serviceImgUrl).apply(RequestOptions().override(100))
                 )
                 .apply(requestOptions)
-                .into(itemView.cv_iv_service_image)
-            itemView.apply {
-                cv_tv_service_name.text = service.serviceName
-                cv_tv_area_name.text = service.areaName
-                cv_tv_place_name.text = service.placeName
+                .into(binding.cvIvServiceImage)
+            binding.apply {
+                cvTvServiceName.text = service.serviceName
+                cvTvAreaName.text = service.areaName
+                cvTvPlaceName.text = service.placeName
                 val serviceStatus = service.serviceStatus
-                cv_tv_service_status.text = serviceStatus
+                cvTvServiceStatus.text = serviceStatus
                 val statusColor = when (serviceStatus) {
                     "접수중" -> R.color.reservationAvailable
                     "예약일시중지" -> R.color.reservationPaused
                     "접수종료" -> R.color.reservationFinished
                     else -> R.color.colorAccent
                 }
-                cv_tv_service_status.setTextColor(ContextCompat.getColor(context, statusColor))
+                cvTvServiceStatus.setTextColor(ContextCompat.getColor(context, statusColor))
             }
 
             itemView.setOnClickListener {

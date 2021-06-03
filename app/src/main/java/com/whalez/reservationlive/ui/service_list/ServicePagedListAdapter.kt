@@ -2,12 +2,11 @@ package com.whalez.reservationlive.ui.service_list
 
 import android.content.Context
 import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
-import androidx.paging.PagedListAdapter
+import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -17,32 +16,31 @@ import com.bumptech.glide.signature.ObjectKey
 import com.whalez.reservationlive.R
 import com.whalez.reservationlive.data.repository.NetworkState
 import com.whalez.reservationlive.data.vo.service_list.Service
+import com.whalez.reservationlive.databinding.NetworkStateItemBinding
+import com.whalez.reservationlive.databinding.ServiceListItemBinding
 import com.whalez.reservationlive.ui.single_service_details.SingleServiceActivity
-import com.whalez.reservationlive.util.Utils.Companion.CLICK_TIME_INTERVAL
 import com.whalez.reservationlive.util.isDoubleClicked
-import com.whalez.reservationlive.util.mLastClickTime
-import kotlinx.android.synthetic.main.network_state_item.view.*
-import kotlinx.android.synthetic.main.service_list_item.view.*
 import java.util.*
 
 class ServicePagedListAdapter(private val context: Context) :
-    PagedListAdapter<Service, RecyclerView.ViewHolder>(ServiceDiffCallback()) {
+    PagingDataAdapter<Service, RecyclerView.ViewHolder>(ServiceDiffCallback()) {
 
-    val SERVICE_VIEW_TYPE = 1
-    val NETWORK_VIEW_TYPE = 2
+    companion object {
+        const val SERVICE_VIEW_TYPE = 1
+        const val NETWORK_VIEW_TYPE = 2
+    }
 
     private var networkState: NetworkState? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        val view: View
 
         return if (viewType == SERVICE_VIEW_TYPE) {
-            view = layoutInflater.inflate(R.layout.service_list_item, parent, false)
-            ServiceItemViewHolder(view)
+            val binding = ServiceListItemBinding.inflate(layoutInflater, parent, false)
+            ServiceItemViewHolder(binding)
         } else {
-            view = layoutInflater.inflate(R.layout.network_state_item, parent, false)
-            NetworkStateItemViewHolder(view)
+            val binding = NetworkStateItemBinding.inflate(layoutInflater, parent, false)
+            NetworkStateItemViewHolder(binding)
         }
     }
 
@@ -73,11 +71,10 @@ class ServicePagedListAdapter(private val context: Context) :
 
     }
 
-    inner class ServiceItemViewHolder (view: View) : RecyclerView.ViewHolder(view) {
+    inner class ServiceItemViewHolder (private val binding: ServiceListItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(service: Service?, context: Context) {
             if (service == null) return
-            Log.d("kkk bind", service.areaName)
             val serviceImgUrl = service.imageUrl
             val requestOptions = RequestOptions()
                 .placeholder(R.drawable.placeholder)
@@ -85,24 +82,24 @@ class ServicePagedListAdapter(private val context: Context) :
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .dontAnimate()
                 .signature(ObjectKey(Calendar.DAY_OF_MONTH))
-            Glide.with(itemView.context)
+            Glide.with(binding.cardView.context)
                 .load(serviceImgUrl)
                 .thumbnail(Glide.with(context).load(serviceImgUrl).apply(RequestOptions().override(100)))
                 .apply(requestOptions)
-                .into(itemView.cv_iv_service_image)
-            itemView.apply {
-                cv_tv_service_name.text = service.serviceName
-                cv_tv_area_name.text = service.areaName
-                cv_tv_place_name.text = service.placeName
+                .into(binding.cvIvServiceImage)
+            binding.apply {
+                cvTvServiceName.text = service.serviceName
+                cvTvAreaName.text = service.areaName
+                cvTvPlaceName.text = service.placeName
                 val serviceStatus = service.serviceStatus
-                cv_tv_service_status.text = serviceStatus
+                cvTvServiceStatus.text = serviceStatus
                 val statusColor = when(serviceStatus){
                     "접수중" -> R.color.reservationAvailable
                     "예약일시중지" -> R.color.reservationPaused
                     "접수종료" -> R.color.reservationFinished
                     else -> R.color.colorAccent
                 }
-                cv_tv_service_status.setTextColor(ContextCompat.getColor(context, statusColor))
+                cvTvServiceStatus.setTextColor(ContextCompat.getColor(context, statusColor))
             }
 
             itemView.setOnClickListener {
@@ -116,22 +113,19 @@ class ServicePagedListAdapter(private val context: Context) :
         }
     }
 
-    class NetworkStateItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    class NetworkStateItemViewHolder(private val binding: NetworkStateItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(networkState: NetworkState?) {
             if (networkState != null && networkState == NetworkState.LOADING) {
-                itemView.progress_bar_item.visibility = View.VISIBLE
+                binding.progressBarItem.visibility = View.VISIBLE
             } else {
-                itemView.progress_bar_item.visibility = View.GONE
+                binding.progressBarItem.visibility = View.GONE
             }
 
-            if (networkState != null && networkState == NetworkState.ERROR) {
-                itemView.error_msg_item.visibility = View.VISIBLE
-                itemView.error_msg_item.text = networkState.msg
-            } else if (networkState != null && networkState == NetworkState.ENDOFLIST) {
-                itemView.error_msg_item.visibility = View.VISIBLE
-                itemView.error_msg_item.text = networkState.msg
-            } else {
-                itemView.error_msg_item.visibility = View.GONE
+            if (networkState != null && (networkState == NetworkState.ERROR || networkState == NetworkState.ENDOFLIST)) {
+                binding.errorMsgItem.visibility = View.VISIBLE
+                binding.errorMsgItem.text = networkState.msg
+            }  else {
+                binding.errorMsgItem.visibility = View.GONE
             }
         }
     }

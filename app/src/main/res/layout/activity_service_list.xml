@@ -13,7 +13,7 @@
         android:orientation="vertical">
 
         <ProgressBar
-            android:id="@+id/progress_bar"
+            android:id="@+id/progressBar"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="center"
@@ -21,7 +21,7 @@
             android:visibility="gone" />
 
         <TextView
-            android:id="@+id/tv_error"
+            android:id="@+id/tvError"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
@@ -55,16 +55,16 @@
                             android:layout_height="@dimen/app_bar_height">
 
                             <ImageView
-                                android:id="@+id/iv_sport_img"
+                                android:id="@+id/ivSportImg"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:adjustViewBounds="true"
                                 android:scaleType="centerCrop"
                                 android:src="@drawable/soccer_logo"
-                                android:tint="@color/imageFilter" />
+                                app:tint="@color/imageFilter" />
 
                             <TextView
-                                android:id="@+id/tv_code_name"
+                                android:id="@+id/tvCodeName"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentStart="true"
@@ -79,7 +79,7 @@
                         </RelativeLayout>
 
                         <androidx.recyclerview.widget.RecyclerView
-                            android:id="@+id/rv_area"
+                            android:id="@+id/rvArea"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="4dp" />
@@ -98,10 +98,8 @@
                 android:orientation="vertical"
                 app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-
-
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_service_list"
+                    android:id="@+id/rvServiceList"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="4dp"
@@ -114,7 +112,7 @@
     </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btn_back"
+        android:id="@+id/btnBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"

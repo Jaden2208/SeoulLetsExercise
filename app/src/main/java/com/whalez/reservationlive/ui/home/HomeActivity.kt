@@ -11,28 +11,29 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.whalez.reservationlive.BuildConfig
 import com.whalez.reservationlive.R
+import com.whalez.reservationlive.databinding.ActivityHomeBinding
 import com.whalez.reservationlive.ui.service_list.ServiceListActivity
 import com.whalez.reservationlive.util.isDoubleClicked
-import kotlinx.android.synthetic.main.activity_home.*
-import kotlinx.android.synthetic.main.bottom_app_info.view.*
 
 class HomeActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityHomeBinding
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
+        binding = ActivityHomeBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        btn_app_info.setOnClickListener {
-            val appInfoLayout = findViewById<LinearLayout>(R.id.app_info_layout)
-            val packageInfo = packageManager.getPackageInfo(packageName, 0)
-
-            appInfoLayout.tv_app_version.text =
-                "${appVersionCode(packageInfo)}.${appVersionName(packageInfo)}"
-            appInfoLayout.tv_min_sdk_version.text = "Android api ${minSdkVersion()} 이상"
-            showBottomSheet(appInfoLayout)
+        binding.btnAppInfo.setOnClickListener {
+            binding.bottomAppInfo.apply {
+                val packageInfo = packageManager.getPackageInfo(packageName, 0)
+                tvAppVersion.text = "${appVersionCode(packageInfo)}.${appVersionName(packageInfo)}"
+                tvMinSdkVersion.text = "Android api ${minSdkVersion()} 이상"
+                showBottomSheet(appInfoLayout)
+            }
         }
-        btn_licenses.setOnClickListener {
+        binding.btnLicenses.setOnClickListener {
             if (isDoubleClicked()) return@setOnClickListener
             val intent = Intent(this, LicensesActivity::class.java)
             startActivity(intent)
@@ -40,7 +41,6 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun showBottomSheet(layout: LinearLayout) {
-
         val sheetBehavior = BottomSheetBehavior.from(layout)
         if (sheetBehavior.state != BottomSheetBehavior.STATE_EXPANDED) {
             sheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED

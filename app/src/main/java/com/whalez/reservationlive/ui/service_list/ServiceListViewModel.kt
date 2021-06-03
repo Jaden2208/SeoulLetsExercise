@@ -3,6 +3,7 @@ package com.whalez.reservationlive.ui.service_list
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.paging.PagedList
+import androidx.paging.PagingData
 import com.whalez.reservationlive.data.repository.NetworkState
 import com.whalez.reservationlive.data.repository.ServiceListRepository
 import com.whalez.reservationlive.data.vo.service_list.Service
@@ -16,7 +17,7 @@ class ServiceListViewModel(
     private val compositeDisposable = CompositeDisposable()
 
 
-    val servicePagedList: LiveData<PagedList<Service>> by lazy {
+    val servicePagedList: LiveData<PagingData<Service>> by lazy {
         servicePagedListRepository.fetchLiveServicePagedList(compositeDisposable, codeName)
     }
 
@@ -24,7 +25,7 @@ class ServiceListViewModel(
         servicePagedListRepository.getNetworkState()
     }
 
-    fun listIsEmpty(): Boolean = servicePagedList.value?.isEmpty() ?: true
+    fun listIsEmpty(): Boolean = servicePagedList.value == null// ?: true
 
     override fun onCleared() {
         super.onCleared()
